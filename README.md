@@ -78,6 +78,22 @@ Phase 8 requirements were not established in the supplied brief.
 
 ## Recorded results
 
+### Codabench submission screenshots
+
+| Phase | Task | Metric | Best visible finished score | Submission ID(s) | Visible / counter |
+| --- | --- | --- | ---: | --- | ---: |
+| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 964722 | 17 / 17 |
+| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 975846 | 11 / 11 |
+| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 991428, 991425 | 12 / 12 |
+| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003747, 1003593 | 10 / 10 |
+| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 1010677 | 8 / 8 |
+| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 | 6 / 6 |
+| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 | 7 / 10 |
+
+These values are transcribed from the supplied submission-history screenshots. Phase 7 is incomplete: seven rows are visible against a counter of ten. Tied best scores are retained. See the [full submission register](results/codabench_submissions.md) for all visible statuses, scores and evidence limitations. Model, adaptation, code and checkpoint mappings are pending.
+
+### Local evaluation
+
 LegalEncDec local evaluation on **32 examples**:
 
 | BERTScore F1 | ROUGE-L F1 | BLEU-4 |

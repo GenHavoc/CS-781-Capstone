@@ -73,7 +73,8 @@ Phase 8 remains TBA and may involve independent evaluation of a submitted model.
 - [x] Original tokenizer/evaluator are recovered and matched to notebook payloads.
 - [ ] Original Funnel implementation and original complete MoE generation/training pipeline.
 - [ ] Actual training logs, saved run configurations, processed token counts and checkpoint hashes for all runs.
-- [ ] Per-submission code/configuration mapping and Codabench IDs/scores for Phase 1.
+- [x] Screenshot-based Codabench register for all seven phases: 71 visible rows; three Phase 7 rows remain unseen.
+- [ ] Remaining Phase 7 rows and per-submission code/configuration/checkpoint mappings for all phases.
 - [ ] Actual preprocessing, adaptation, training, inference and evaluation code for Phases 2–7.
 - [ ] Evidence of required architecture/adaptation/LORMA/distillation coverage in each applicable phase.
 - [ ] Per-submission architecture, methodology, implementation and reproducibility documentation.
@@ -81,3 +82,5 @@ Phase 8 remains TBA and may involve independent evaluation of a submitted model.
 - [ ] Correctly named Hello IITK report/code ZIP.
 
 The recovered notebooks contain configuration budgets and original source, but no saved execution outputs or trained weights. Their presence does not establish completed runs or submissions.
+
+The [submission register](../results/codabench_submissions.md) records visible IDs, scores and statuses. Counts alone do not verify distinct submissions, architecture coverage, adaptation techniques, LORMA or distillation. Each row still needs the original implementation/configuration and checkpoint evidence.
