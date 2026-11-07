@@ -113,7 +113,7 @@ The [requirements checklist](docs/requirements.md) tracks the remaining delivera
 
 ## Report
 
-The final report needs the repository URL, references and the official LLM assistance declaration. [References](docs/references.md) and the [declaration worksheet](docs/llm_declaration.md) are kept separately. The course limits coding-assistant use, so the declaration must reflect the actual assistance history.
+The final report needs the repository URL, references and the official LLM assistance declaration. See [references](docs/references.md) and the course's official report template for the declaration.
 
 ## Repository access
 
