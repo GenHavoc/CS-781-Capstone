@@ -71,7 +71,9 @@ Phase 8 remains TBA and may involve independent evaluation of a submitted model.
 - [x] Four model families have recorded architecture specifications.
 - [x] Conv and LegalEncDec source and original training notebooks are recovered.
 - [x] Original tokenizer/evaluator are recovered and matched to notebook payloads.
-- [ ] Original Funnel implementation and original complete MoE generation/training pipeline.
+- [x] Uploaded Funnel standalone model, trainer and generator saved as a Python file.
+- [ ] Original complete MoE generation/training pipeline.
+- [ ] Resolve Funnel parameter-budget difference: uploaded defaults have 45,327,360 parameters, below the 50M minimum; the earlier specification has FFN width 2,496 instead of 2,048.
 - [ ] Actual training logs, saved run configurations, processed token counts and checkpoint hashes for all runs.
 - [x] Screenshot-based Codabench register for all seven phases: 71 visible rows; three Phase 7 rows remain unseen.
 - [ ] Remaining Phase 7 rows and per-submission code/configuration/checkpoint mappings for all phases.

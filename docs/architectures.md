@@ -2,14 +2,14 @@
 
 Updated: 6 November 2026 (India time); original recorded specifications date to 24 October 2026.
 
-These notes describe the four Phase 1 model designs. Implementation details come from the code where it is available; Funnel settings come from the recorded specification. Checkpoint metadata and screenshot results are noted separately. Training completion and course architecture categories still need to be checked against the original runs.
+These notes describe the four Phase 1 model designs. Implementation details come from the available code. Funnel now has a standalone implementation as well as the earlier recorded specification. Checkpoint metadata and screenshot results are noted separately. Training completion and course architecture categories still need to be checked against the original runs.
 
 ## Model inventory
 
 | Model | Architecture | Parameter count and evidence | Context |
 | --- | --- | --- | --- |
 | Conv/hybrid | Prefix Transformer with RoPE and gated causal depthwise convolution; original source recovered | Earlier reported checkpoint contains 90,061,440 stored tensor elements | 2,048 |
-| FunnelTransformer | Custom decoder-only Transformer with local-to-global causal attention and factorized embeddings | Approximately 50M from the specification; exact implementation/count not yet verified | 1,536 |
+| FunnelTransformer | Custom decoder-only Transformer with local-to-global causal attention and factorized embeddings | Uploaded default implementation: 45,327,360; earlier specification: approximately 50M | 1,536 |
 | LegalEncDec | 4-layer bidirectional encoder and 4-layer causal decoder with cross-attention | 50,777,088 parameters calculated from the default implementation | 2,048 per encoder/decoder stream |
 | RoPE–GQA–MoE | Decoder-only Transformer with rotary positions, grouped-query attention and Top-1 MoE | Named model90m; supplied configuration gives approximately 82.44M backbone parameters, excluding the LM head | 1,536 |
 
@@ -56,7 +56,30 @@ The tokenizer and evaluator were subsequently recovered and compared byte-for-by
 
 ## 2. FunnelTransformer
 
-Source: the recorded architecture specification; implementation is not in the repo yet.
+Source: the uploaded standalone implementation in `phase1/models/funnel.py`, preserved byte-for-byte from `Pasted text(7).txt`.
+
+### Uploaded implementation
+
+The code includes `Config`, `FunnelTransformer`, token-file preparation, a trainer with checkpoint/resume support, holdout evaluation and a sampling generator. Its default model uses the local-to-global layout below, but sets `ffn_dim=2048` rather than the earlier specification's 2,496. The exact uploaded defaults are in `phase1/configs/funnel_standalone.json`.
+
+| Component | Parameters with uploaded defaults |
+| --- | ---: |
+| Token embedding | 12,800,000 |
+| Input and output bottleneck projections | 262,144 |
+| Learned positional embedding | 786,432 |
+| Ten attention/FFN blocks, including LayerNorm | 31,477,760 |
+| Final LayerNorm | 1,024 |
+| Total | 45,327,360 |
+
+This count follows from the layer shapes; it was not obtained from a training run. The `50m` preset name does not change the defaults. At this width the model is below the course's 50M minimum. With FFN width 2,496, the same architecture would have 49,914,880 parameters, which is still slightly below 50M. The original source has not been adjusted to change either count.
+
+The trainer requests 250,000,000 sampled input tokens, micro-batch 3, gradient accumulation 13, context 1,536 and an 11-hour wallclock cap. These are configured budgets, not completed-run records. It saves the model, optimizer, scaler, step and configuration. Generation uses temperature 0.4 and top-p 0.85 by default, with full context recomputation rather than a KV cache.
+
+The token-file builder defaults to an EOS spelling of `</s>`, while the project tokenizer uses `<eos>` (ID 3). With the defaults, no EOS separator is appended when `</s>` is absent. The generator's `max_new_tokens` counts tokens, whereas the official Phase 1 output requirement counts words. See the model guide for these integration details.
+
+### Earlier specification
+
+The following records the earlier design brief, retained in `phase1/configs/funnel.json`:
 
 - Custom decoder-only Transformer trained from scratch.
 - Approximately 50M total parameters.
@@ -87,7 +110,7 @@ Architecture summary:
 
 “FunnelTransformer is a custom decoder-only Transformer with a local-to-global causal attention schedule and factorized, tied input/output embeddings. It uses no sequence pooling or downsampling.”
 
-Despite the name, this design has no pooling. Its exact parameter count and implementation details still need to be checked against the original source.
+Despite the name, this design has no pooling. The earlier specification and the uploaded defaults differ in FFN width; the counts above keep that distinction explicit.
 
 ## 3. LegalEncDec
 
@@ -248,7 +271,7 @@ The name “90M” is a filename/model label until the full language-model param
 ## Files still needed
 
 The repo currently includes:
-- Funnel: detailed architecture specification.
+- Funnel: standalone model, trainer and generator, plus the earlier architecture specification.
 - LegalEncDec: full model code and 32-example local evaluation screenshot.
 - RoPE–GQA–MoE: backbone loader and configuration screenshot.
 - Conv/hybrid: original model/training code, three notebook versions, earlier checkpoint metadata and tensor names.
@@ -256,7 +279,6 @@ The repo currently includes:
 - Original tokenizer and evaluator: recovered and matched to notebook payloads.
 
 The remaining files and run details are:
-- Full Funnel source code.
 - Original MoE language-model output head and training code.
 - Actual training configurations, seeds, data splits and processed token counts.
 - Checkpoint provenance and exact checkpoint selection.

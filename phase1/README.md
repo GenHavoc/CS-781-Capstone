@@ -1,11 +1,11 @@
 # Phase 1: Legal Language Model Pretraining
 
-This phase covers the four foundation-model designs. Model code is in `models/` and architecture settings are in `configs/`.
+This phase covers the four foundation-model designs. All four `.py` files are in [models/](models/README.md), with architecture settings in `configs/`. The MoE file contains its backbone loader only.
 
 | Model | Code status | Configuration status |
 | --- | --- | --- |
 | Conv/hybrid | Model and Run-All training utilities | Matches recorded checkpoint configuration |
-| FunnelTransformer | Source pending | Recorded architecture specification |
+| FunnelTransformer | Standalone model, trainer and generator | Uploaded defaults in `configs/funnel_standalone.json`; earlier specification retained separately |
 | LegalEncDec | Model and Run-All training utilities | Complete default model configuration |
 | RoPE–GQA–MoE | Backbone loader only | Partial screenshot configuration; checkpoint supplies remaining settings |
 

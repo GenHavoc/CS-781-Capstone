@@ -23,13 +23,13 @@ These are the best scores among the finished submissions visible in my Codabench
 | Model | Design | Parameters | Context | Available material |
 | --- | --- | --- | --- | --- |
 | Conv/hybrid | Prefix Transformer with RoPE and gated causal depthwise convolution | 90,061,440 | 2,048 | Model, training utilities and notebooks |
-| FunnelTransformer | Local-to-global causal attention; factorized embeddings | Approximately 50M, unverified | 1,536 | Architecture specification |
+| FunnelTransformer | Local-to-global causal attention; factorized embeddings | 45,327,360 with uploaded defaults | 1,536 | Standalone model, trainer and generator |
 | LegalEncDec | 4 encoder and 4 decoder layers with cross-attention | 50,777,088 | 2,048 per stream | Model, training utilities, notebook and local metrics |
 | RoPE–GQA–MoE | Rotary positions, 8 query/2 KV heads, 4 experts with Top-1 routing | Approximately 82.44M backbone; LM head excluded | 1,536 | Backbone implementation and partial configuration |
 
 The [architecture notes](docs/architectures.md) cover the attention layouts, layer settings and parameter counts. The MoE count above is for the backbone only; its `model90m.pt` filename is a model label, not a verified full-model count.
 
-Conv and LegalEncDec have model code and training notebooks in this repo. Funnel currently has its architecture specification, and MoE has its backbone loader and a partial configuration. The Funnel implementation, full MoE training/generation pipeline, checkpoint files and later-phase implementations are still to be added.
+All four model files are in [phase1/models/](phase1/models/README.md): [Conv](phase1/models/conv_hybrid.py), [Funnel](phase1/models/funnel.py), [LegalEncDec](phase1/models/legal_enc_dec.py) and [MoE backbone](phase1/models/rope_gqa_moe_backbone.py). Conv and LegalEncDec have training notebooks; Funnel includes a standalone trainer and generator. The full MoE training/generation pipeline, checkpoint files and later-phase implementations are still to be added.
 
 ## Running the code
 
@@ -59,7 +59,7 @@ backbone = build_backbone("checkpoints/model90m.pt").eval()
 # backbone(input_ids).last_hidden_state has shape (batch, sequence, 512).
 ```
 
-The MoE checkpoint must include its original configuration, including `qk_norm` and `rope_theta`. This loader returns hidden states and leaves out the generation head. Conv is in `phase1/models/conv_hybrid.py`; Funnel's settings are in `phase1/configs/funnel.json`.
+The MoE checkpoint must include its original configuration, including `qk_norm` and `rope_theta`. This loader returns hidden states and leaves out the generation head. Conv is in `phase1/models/conv_hybrid.py`. Funnel's uploaded defaults are in `phase1/configs/funnel_standalone.json`; `phase1/configs/funnel.json` retains the earlier specification. The uploaded source uses FFN width 2,048, while that earlier specification used 2,496.
 
 ### Kaggle notebooks
 

@@ -1,3 +1,4 @@
 # Model dependency. Pin to the recorded training version for exact reproduction.
 torch
+numpy
 
