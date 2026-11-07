@@ -1,6 +1,6 @@
 # CS781 Phase 1 Model Reference
 
-Updated: 24 October 2026 (India time).
+Updated: 6 November 2026 (India time); original recorded specifications date to 24 October 2026.
 
 This reference preserves the four models discussed for the legal-language-model capstone and the evidence currently available. Specifications supplied by the user, facts visible in pasted code, observations from screenshots, and unverified training claims are distinguished below. This is an architecture inventory, not a claim that every model has completed training or satisfies every course architecture category.
 
@@ -8,14 +8,14 @@ This reference preserves the four models discussed for the legal-language-model 
 
 | Model | Architecture | Parameter count and evidence | Context |
 | --- | --- | --- | --- |
-| Conv/hybrid | Convolution-enhanced Transformer; exact block implementation not supplied in this conversation | Earlier reported checkpoint contains 90,061,440 stored tensor elements | 2,048 |
+| Conv/hybrid | Prefix Transformer with RoPE and gated causal depthwise convolution; original source recovered | Earlier reported checkpoint contains 90,061,440 stored tensor elements | 2,048 |
 | FunnelTransformer | Custom decoder-only Transformer with local-to-global causal attention and factorized embeddings | Approximately 50M, user-supplied; exact implementation/count not yet verified | 1,536 |
 | LegalEncDec | 4-layer bidirectional encoder and 4-layer causal decoder with cross-attention | 50,777,088 parameters calculated from the pasted default implementation | 2,048 per encoder/decoder stream |
 | RoPE–GQA–MoE | Decoder-only Transformer with rotary positions, grouped-query attention and Top-1 MoE | Named model90m; supplied configuration gives approximately 82.44M backbone parameters, excluding the LM head | 1,536 |
 
 ## 1. Conv/hybrid model
 
-Evidence: checkpoint information shared earlier, not a fresh inspection of the checkpoint in this conversation.
+Evidence: earlier checkpoint metadata and original `MODEL_CODE` recovered from `CS781_90M_800M_RunAll_Kaggle.ipynb`. Source is available at `phase1/models/conv_hybrid.py`; the checkpoint itself has not been re-inspected.
 
 - Reported stored tensor elements: 90,061,440.
 - Reported checkpoint size: 360.3 MB.
@@ -34,14 +34,25 @@ Evidence: checkpoint information shared earlier, not a fresh inspection of the c
 - embedding.weight shape: (50000, 640); reported dtype: float32.
 - blocks.0.conv_gate shape: (640,).
 
-The full block implementation, positional encoding, precise convolution integration, normalization formula, output-head structure, training token count and generation settings remain unverified. A norm weight name alone does not establish the normalization type.
+The recovered LegalPrefixConv source establishes the following:
+
+- RoPE positions with theta 10,000 and standard multi-head Q/K/V attention with 10 heads (not grouped-query attention).
+- Pre-RMSNorm and a final RMSNorm; epsilon 1e-6.
+- Each block adds global attention and a gated causal depthwise kernel-5 convolution to the residual, followed by a SwiGLU feed-forward residual.
+- Per-channel convolution gates are initialized to -2.0 before the sigmoid.
+- Shared input embeddings and tied language-model output projection.
+- A prefix attention mask allows bidirectional attention within the prefix; suffix positions attend causally and the prefix cannot attend to the suffix.
+- KV caches and per-layer convolution histories support incremental continuation generation.
+- A 90,061,440 parameter total follows from the recovered default configuration and layer shapes.
+
+Original Run-All training code is in `phase1/runs/conv_runall/`. Its requested budget is 800,000,000 tokens; completed training tokens and checkpoint provenance require the actual run logs. The original Conv tokenizer/evaluator have been recovered and checked against the copies embedded in the notebooks.
 
 Previously shared associated files:
 - best.pt.
 - legal_bpe_50k_fixed.json.
 - evaluate_phase1.py.
 
-These file identities are references from prior context; their current contents were not inspected for this save.
+The tokenizer and evaluator were subsequently recovered and compared byte-for-byte to the notebook payloads. The checkpoint remains a prior reference, not a newly verified artifact.
 
 ## 2. FunnelTransformer
 
@@ -240,10 +251,12 @@ Available information:
 - Funnel: detailed architecture specification.
 - LegalEncDec: full model code and 32-example local evaluation screenshot.
 - RoPE–GQA–MoE: backbone loader and configuration screenshot.
-- Conv/hybrid: earlier checkpoint metadata and tensor names.
+- Conv/hybrid: original model/training code, three notebook versions, earlier checkpoint metadata and tensor names.
+- LegalEncDec: original 300M-budget notebook and model/training utilities.
+- Original tokenizer and evaluator: recovered and matched to notebook payloads.
 
 Still needed to reconstruct the repository accurately:
-- Full Conv and Funnel source code.
+- Full Funnel source code; Conv source has now been recovered.
 - Original MoE language-model output head and training code.
 - Actual training configurations, seeds, data splits and processed token counts.
 - Checkpoint provenance and exact checkpoint selection.

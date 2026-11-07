@@ -10,3 +10,8 @@ The archive has `code/` and `report/` directly at its root. Place each phase's b
 
 The repository starter ZIP is not the completed course submission.
 
+
+
+The supplied schedule gives **8 November 2026** for report/code submission on Hello IITK. Its FAQ refers to an 8-page main report and an unlimited appendix referenced from the main report. Follow the official template and current course announcements for the final page limit and deadline.
+
+See [the requirements checklist](../docs/requirements.md) for the detailed deliverables and unresolved contradictions.

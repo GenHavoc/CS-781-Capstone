@@ -1,0 +1,142 @@
+{
+  "recovered_on": "2026-11-06",
+  "source": "Original notebook and file attachments from earlier capstone chats",
+  "files": [
+    {
+      "path": "phase1/notebooks/CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "sha256": "c95afc77b003f2aad1ff00fa4778374cbf92c97d25269c33ec8989639299c008",
+      "outputs_present": false
+    },
+    {
+      "path": "phase1/runs/encdec_300m/checks.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "checks.py",
+      "sha256": "5408baf585f9e99e1160e730e0660e1208963a4d4bd1aed7081ed3e2ea11fb10"
+    },
+    {
+      "path": "phase1/runs/encdec_300m/data_pipeline.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "data_pipeline.py",
+      "sha256": "c0b9678ea2fc669ac75e3c362f457395f463af0b814b461f9c3fef5c754965f7"
+    },
+    {
+      "path": "phase1/runs/encdec_300m/generate.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "generate.py",
+      "sha256": "52d7eaf2cffff9355f4532a18c2886d00cdcd6aacd9135de6f2790d55ee1d7b2"
+    },
+    {
+      "path": "phase1/runs/encdec_300m/jobs.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "jobs.py",
+      "sha256": "ab0e89038148ef87d8de97761850631a7cdb95f14cae902d5f5a97cc21f401a7"
+    },
+    {
+      "path": "phase1/runs/encdec_300m/model.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "model.py",
+      "sha256": "86bc2947434eef1e2229e87bb86dad8e6bfea9e4753879e324c4c9e35074298d"
+    },
+    {
+      "path": "phase1/runs/encdec_300m/pipeline.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "pipeline.py",
+      "sha256": "fc05d8ce2ede71035465b730030593ea35d60fb339a04463ebb0e8bc56c76049"
+    },
+    {
+      "path": "phase1/runs/encdec_300m/runtime.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "runtime.py",
+      "sha256": "f7ee0fe7a007e2a4c4d925252910e80a6a2c8cba257fe6f69538576bb5c0bcc0"
+    },
+    {
+      "path": "phase1/runs/encdec_300m/train.py",
+      "source_filename": "CS781_EncDec_50M_300M_Kaggle.ipynb",
+      "embedded_entry": "train.py",
+      "sha256": "816b3fcea516f4595e04f93dc14a24a36b2e3b205ab10b5053ca87f788ba2325"
+    },
+    {
+      "path": "phase1/notebooks/LegalPrefixConv_89M_Kaggle.ipynb",
+      "source_filename": "LegalPrefixConv_89M_Kaggle.ipynb",
+      "sha256": "4711222a04a322d50e2a53eb27c7d2620d138d788465fb3d69729c783261ea7f",
+      "outputs_present": false
+    },
+    {
+      "path": "phase1/notebooks/CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "sha256": "ff4ec26cfaa781016ccf663ca1a0dbb0652f087b9e4a60c1c4bb519616d34dea",
+      "outputs_present": false
+    },
+    {
+      "path": "phase1/runs/conv_runall/checks.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "checks.py",
+      "sha256": "b732f4b339c60e769199134e77dbb1e44b7a19292ac475cd9e4e1268a60fc173"
+    },
+    {
+      "path": "phase1/runs/conv_runall/data_pipeline.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "data_pipeline.py",
+      "sha256": "c0b9678ea2fc669ac75e3c362f457395f463af0b814b461f9c3fef5c754965f7"
+    },
+    {
+      "path": "phase1/runs/conv_runall/generate.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "generate.py",
+      "sha256": "5974004cbde8f8dd8e27d3f523b7e7dcb37df2c98cc17278d8834fdad706fe5e"
+    },
+    {
+      "path": "phase1/runs/conv_runall/jobs.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "jobs.py",
+      "sha256": "d940ac1b82c054a877087b57a8c4ed04e45bdb9277e82a0522b8cab365639237"
+    },
+    {
+      "path": "phase1/runs/conv_runall/model.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "model.py",
+      "sha256": "5393f8ff6288321d3088b75565d87592076b8c8228c05e60dec21edac0e3d788"
+    },
+    {
+      "path": "phase1/runs/conv_runall/pipeline.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "pipeline.py",
+      "sha256": "18edb6ed4a20dc20e6d7df4bbd17a2d7252d0ee94b8f48589986d28e1bbefa05"
+    },
+    {
+      "path": "phase1/runs/conv_runall/runtime.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "runtime.py",
+      "sha256": "f7ee0fe7a007e2a4c4d925252910e80a6a2c8cba257fe6f69538576bb5c0bcc0"
+    },
+    {
+      "path": "phase1/runs/conv_runall/train.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "train.py",
+      "sha256": "0936fd71c64860c56640b4062f6562213d61bd186de18cfb3481a52f61954e1c"
+    },
+    {
+      "path": "phase1/models/conv_hybrid.py",
+      "source_filename": "CS781_90M_800M_RunAll_Kaggle.ipynb",
+      "embedded_entry": "MODEL_CODE",
+      "sha256": "5393f8ff6288321d3088b75565d87592076b8c8228c05e60dec21edac0e3d788"
+    },
+    {
+      "path": "phase1/notebooks/LegalPrefixConv_90M_10Hour_Training_Evaluation.ipynb",
+      "source_filename": "LegalPrefixConv_90M_10Hour_Training_Evaluation.ipynb",
+      "sha256": "88bb329224de4469e78ea1738f95b536e41f50b898b9040a76c2d159220b3422",
+      "outputs_present": false
+    },
+    {
+      "path": "phase1/tokenizer/legal_bpe_50k_fixed.json",
+      "source_filename": "legal_bpe_50k_fixed.json",
+      "sha256": "636cf69e301bdd6ed22f1d89cb9ce01edb4e104f9456e5b99c6fa30fcd882233"
+    },
+    {
+      "path": "phase1/evaluation/evaluate_phase1.py",
+      "source_filename": "evaluate_phase1.py",
+      "sha256": "3f3a9e62be718b478e3f52b378fcc535350ab90b9cb84e3a4c49fec247abf1db"
+    }
+  ]
+}

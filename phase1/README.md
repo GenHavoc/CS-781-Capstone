@@ -4,16 +4,16 @@ The model source files supplied for this repository are in `models/`. Recorded a
 
 | Model | Code status | Configuration status |
 | --- | --- | --- |
-| Conv/hybrid | Source pending | Recorded checkpoint configuration |
+| Conv/hybrid | Original model and Run-All training utilities recovered | Matches recorded checkpoint configuration |
 | FunnelTransformer | Source pending | User-supplied specification |
-| LegalEncDec | Supplied model implementation | Complete default model configuration |
+| LegalEncDec | Model and Run-All training utilities recovered | Complete default model configuration |
 | RoPE–GQA–MoE | Supplied backbone loader only | Partial screenshot configuration; checkpoint supplies remaining settings |
 
 See [the architecture reference](../docs/architectures.md) for attention layouts, parameter accounting and known limitations.
 
 ## Remaining reproducibility material
 
-Add the original training/data preparation notebooks or scripts; tokenizer; official evaluation script; actual training configuration; checkpoint locations/hashes; decoding settings; validation split; token counts and submission records.
+The original Conv and LegalEncDec notebooks, their training/data preparation utilities, tokenizer and evaluation script are now included. The saved run configurations, checkpoint locations/hashes, actual validation split and processed-token counts, generation settings and submission records still need to be attached. See `notebooks/README.md` and `runs/README.md`.
 
 For text continuation, each official test prompt requires a 128-word continuation in `prediction.json`. The continuation excludes the original prompt. The file belongs directly at the root of its Codabench submission ZIP. These details are from the supplied capstone brief.
 
