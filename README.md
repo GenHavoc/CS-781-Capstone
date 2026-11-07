@@ -8,17 +8,15 @@ The Phase 1 work covers four model designs: a convolution–Transformer hybrid, 
 
 These are the best scores among the finished submissions visible in my Codabench screenshots. Ties are listed together.
 
-| Phase | Task | Metric | Best visible finished score | Submission ID(s) | Visible / counter |
-| --- | --- | --- | ---: | --- | ---: |
-| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 964722 | 17 / 17 |
-| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 975846 | 11 / 11 |
-| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 991428, 991425 | 12 / 12 |
-| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003747, 1003593 | 10 / 10 |
-| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 1010677 | 8 / 8 |
-| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 | 6 / 6 |
-| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 | 7 / 10 |
-
-The [submission history](results/codabench_submissions.md) has all 71 visible rows, including failed and cancelled runs. Phase 7's screenshot shows seven of its ten submissions, so its best score is based on those seven. Scores are transcribed from the screenshots; the model, method and checkpoint for each ID still need to be linked. [JSON](results/codabench_submissions.json) and [CSV](results/codabench_submissions.csv) copies are available too.
+| Phase | Task | Metric | Best visible finished score | Submission ID(s) |
+| --- | --- | --- | ---: | --- |
+| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 964722 |
+| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 975846 |
+| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 991428, 991425 |
+| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003747, 1003593 |
+| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 1010677 |
+| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 |
+| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 |
 
 ## Phase 1 models
 
