@@ -1,0 +1,44 @@
+{
+  "experiment_id": null,
+  "phase": null,
+  "architecture": null,
+  "method": null,
+  "code_commit": null,
+  "config_path": null,
+  "checkpoint": {
+    "path_or_url": null,
+    "sha256": null,
+    "step": null
+  },
+  "data": {
+    "sources": [],
+    "split": null,
+    "seed": null,
+    "processed_tokens": null,
+    "tokenizer_sha256": null
+  },
+  "training": {
+    "optimizer": null,
+    "learning_rate": null,
+    "batch_size": null,
+    "gradient_accumulation": null,
+    "schedule": null,
+    "epochs": null,
+    "seed": null
+  },
+  "inference": {
+    "settings": null
+  },
+  "local_evaluation": {
+    "split": null,
+    "examples": null,
+    "metrics": {}
+  },
+  "codabench": {
+    "submission_id": null,
+    "date": null,
+    "metrics": {}
+  },
+  "notes": null
+}
+

@@ -1,0 +1,16 @@
+{
+  "architecture": "LegalEncDec",
+  "source": "Screenshot 2026-10-24 at 7.07.05 PM.png",
+  "evaluation_type": "local",
+  "examples": 32,
+  "metrics": {
+    "BERTScore_F1": 0.812633,
+    "ROUGE_L_F1": 0.163818,
+    "BLEU_4": 0.020662
+  },
+  "checkpoint": null,
+  "split": null,
+  "decoding_config": null,
+  "codabench_submission_id": null
+}
+

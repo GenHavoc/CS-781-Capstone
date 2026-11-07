@@ -1,0 +1,12 @@
+{
+  "n_layer": 10,
+  "n_embd": 512,
+  "n_head": 8,
+  "n_kv_heads": 2,
+  "num_experts": 4,
+  "ffn_dim": 1024,
+  "context_length": 1536,
+  "vocab_size": 50048,
+  "embed_bottleneck": 256
+}
+

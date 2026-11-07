@@ -1,0 +1,12 @@
+{
+  "vocab_size": 50000,
+  "d_model": 640,
+  "n_heads": 10,
+  "n_layers": 12,
+  "d_ff": 1664,
+  "kernel_size": 5,
+  "max_context": 2048,
+  "checkpoint_blocks": false,
+  "loss_chunk": 1024
+}
+
