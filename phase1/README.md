@@ -11,6 +11,10 @@ This phase covers the four foundation-model designs. Model code is in `models/` 
 
 The [architecture notes](../docs/architectures.md) explain how the models differ and how their parameter counts were calculated.
 
+## Tokenizer
+
+The project tokenizer is a **custom-trained 50k byte-level BPE tokenizer**. Its 50,000-token vocabulary includes `<pad>` (0), `<unk>` (1), `<bos>` (2) and `<eos>` (3). The [tokenizer guide](tokenizer/README.md) includes the configuration, file hash and loading example.
+
 ## Training and evaluation
 
 The Conv and LegalEncDec [Kaggle notebooks](notebooks/README.md) are the training entry points. Their model, data-preparation, training and generation modules are also available under [runs/](runs/README.md). The original tokenizer and evaluation script are included.

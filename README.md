@@ -105,7 +105,7 @@ This is a local run, separate from the Codabench results. Its checkpoint, split,
 
 ## Data, weights and experiment records
 
-The official dataset is [Exploration-Lab/CS-781-Capstone](https://huggingface.co/datasets/Exploration-Lab/CS-781-Capstone). The tokenizer is in `phase1/tokenizer/legal_bpe_50k_fixed.json` and the evaluator is in `phase1/evaluation/evaluate_phase1.py`; both match the copies embedded in the Run-All notebooks.
+The official dataset is [Exploration-Lab/CS-781-Capstone](https://huggingface.co/datasets/Exploration-Lab/CS-781-Capstone). The project uses a **custom-trained 50k byte-level BPE tokenizer**, stored in [phase1/tokenizer/legal_bpe_50k_fixed.json](phase1/tokenizer/legal_bpe_50k_fixed.json). Its 50,000-token vocabulary includes PAD, UNK, BOS and EOS. See the [tokenizer guide](phase1/tokenizer/README.md) for special-token IDs and loading instructions. The evaluator is in `phase1/evaluation/evaluate_phase1.py`; both files match the copies embedded in the Run-All notebooks.
 
 Keep datasets in `data/`, weights in `checkpoints/`, and generated files in `outputs/`. These folders are excluded from Git. [Checkpoint notes](docs/checkpoints.md) list the information needed to load the weights again. Each [experiment record](experiments/README.md) should connect a submission ID to its code commit, configuration and checkpoint, with local and Codabench scores recorded separately.
 
