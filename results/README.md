@@ -1,12 +1,6 @@
-# Recorded Results
+# Results
 
-`phase1_local.json` preserves the LegalEncDec scores visible in the supplied screenshot. The screenshot reported 32 examples, generation 32/32 and evaluator exit code 0.
-
-The evaluation split, exact checkpoint, decoding settings and run command are not yet present. Do not compare these numbers to results on another split as though they were a controlled experiment.
-
-Add raw logs and reproducible result records as they become available.
-
-## Codabench submission history
+## Codabench
 
 | Phase | Task | Metric | Best visible finished score | Submission ID(s) | Visible / counter |
 | --- | --- | --- | ---: | --- | ---: |
@@ -18,6 +12,16 @@ Add raw logs and reproducible result records as they become available.
 | 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 | 6 / 6 |
 | 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 | 7 / 10 |
 
-The [full register](codabench_submissions.md), [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv) preserve 71 visible rows: 65 Finished, two Failed and four Cancelled. Counters sum to 74; three Phase 7 rows are cropped out. Best scores use visible Finished rows only and retain ties.
+The [submission history](codabench_submissions.md), [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv) contain 71 visible rows: 65 Finished, two Failed and four Cancelled. The phase counters sum to 74; the remaining three Phase 7 rows are outside the screenshot.
 
-Scores were transcribed from user-provided screenshots, not fetched from Codabench. Dates have an unknown timezone. Metric names are mapped from the course brief. Code, model, adaptation and checkpoint assignments are not identified by these images and remain pending. The local 32-example results above use a different evidence source and are not merged with these platform scores.
+The table takes the highest score among visible Finished rows and keeps ties. Scores were copied from the screenshots rather than fetched from Codabench. Metric names follow the course brief, and dates retain the displayed time because no timezone is shown. The submission IDs still need to be linked to their models, adaptation methods, code and checkpoints.
+
+## LegalEncDec local evaluation
+
+`phase1_local.json` records the separate local evaluation shown in the LegalEncDec screenshot:
+
+| Examples | BERTScore F1 | ROUGE-L F1 | BLEU-4 |
+| ---: | ---: | ---: | ---: |
+| 32 | 0.812633 | 0.163818 | 0.020662 |
+
+Generation completed for 32/32 examples and the evaluator returned exit code 0. The split, exact checkpoint, decoding settings and run command still need to be recorded alongside the raw logs. These values should be kept separate from Codabench scores and from runs on other splits.

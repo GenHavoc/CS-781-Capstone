@@ -1,6 +1,6 @@
-# Capstone Requirements and Remaining Work
+# Course Requirements and Remaining Work
 
-Source: the supplied Capstone Document(3).docx, reviewed on 6 November 2026. Section references below identify the source of each requirement. The course document is dynamic and contains the inconsistencies recorded below.
+These notes follow Capstone Document(3).docx, reviewed on 6 November 2026. Section numbers refer to that version. The brief changes over time and contains a few conflicting instructions, listed below.
 
 ## Repository and final deliverables
 
@@ -25,7 +25,7 @@ Section 7 requires models trained from scratch with 50M–300M parameters and at
 
 For each official 512-word prompt, generate a 128-word continuation without repeating the prompt. The primary metric is BERTScore F1. Tokenizer, data mixing, validation construction, context, optimization and decoding choices should be documented with experiment evidence. The starter-code predictions do not count toward the minimum submission requirement (Section 7.7).
 
-Repository model names are not proof that the organizers accept each model under a required category. Preserve the original implementation and actual submission evidence for all four families.
+The category assigned to each model still needs to match the organizers' definitions. Keep the original implementation and submission record for each of the four families.
 
 ## Later phases
 
@@ -40,7 +40,7 @@ Repository model names are not proof that the organizers accept each model under
 
 The phase-specific mandatory-method sections require at least three different fine-tuning/adaptation techniques and at least one knowledge-distillation experiment. Merely changing learning rates, batch sizes, ranks or sequence lengths does not satisfy methodological diversity. Distillation transfers information from a larger/stronger teacher to a smaller student. Later phases must use the permitted models developed in this project rather than unrelated pretrained weights or external LLM APIs.
 
-Phase 8 remains TBA and may involve independent evaluation of a submitted model. Do not invent its requirements.
+Phase 8 remains TBA and may involve independent evaluation of a submitted model. Its requirements are not established in this version.
 
 ## Codabench submissions
 
@@ -63,7 +63,7 @@ Phase 8 remains TBA and may involve independent evaluation of a submitted model.
 ## Contradictions requiring course clarification
 
 1. Submission counts: the opening requires four submissions for Phase 1 and six for Phases 2–7. Section 6.5 and several phase sections still refer to four. Track the larger opening counts while seeking clarification.
-2. Data: Section 17.2 says to use only official competition data and prohibits outside legal datasets; FAQ 24.3 allows external generic corpora and synthetic data. Do not silently treat this conflict as unrestricted permission.
+2. Data: Section 17.2 says to use only official competition data and prohibits outside legal datasets; FAQ 24.3 allows external generic corpora and synthetic data. This conflict needs clarification before treating external data as unrestricted.
 
 ## Repository completion checklist
 

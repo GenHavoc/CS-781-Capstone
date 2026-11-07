@@ -12,21 +12,21 @@ All 71 visible rows are transcribed below. The phase counters sum to 74; three P
 | 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 | 6 / 6 |
 | 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 | 7 / 10 |
 
-## Evidence and interpretation
+## Reading the records
 
-- Transcribed from seven user-supplied Codabench My Submissions screenshots; not independently retrieved from Codabench.
-- Scores are four-decimal display strings; blank score cells are null in JSON and empty in CSV.
-- Metric names come from Capstone Document(3).docx; the screenshot column itself is labelled Score.
-- Displayed dates are preserved without timezone conversion because the table does not identify a timezone.
-- Phase 7 has seven visible rows but a total counter of ten. Three rows have unknown IDs, statuses and scores; no placeholder submissions are invented.
-- Best scores are maxima over visible rows with status Finished, retaining all ties. They do not establish an overall best for hidden rows.
-- Submission 973189 has status Cancelled and a displayed score of 0.4805; both are preserved and it is excluded from best-finished calculations.
-- A green check mark is recorded as a visual observation only; leaderboard selection and final acceptance have not been independently verified.
-- Per-row status is used. The repeated Running submission_8.zip banner is inconsistent with the Finished row for 1040827; phase availability banners are not treated as current schedule evidence.
-- Submission counts do not establish distinct architectures, adaptation methods, nonidentical predictions, required-method coverage or reproducibility. Model/method/code/config/checkpoint mappings remain null.
-- Original screenshots remain in the supplied chat attachments; source filenames and SHA-256 hashes identify the evidence. Images are not duplicated in this repository.
+The history comes from seven Codabench My Submissions screenshots. It has not been fetched independently from Codabench. The phase tables below keep the original rows, filenames, displayed dates, statuses and scores.
 
-Machine-readable records: [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv). Unknown mappings are JSON null / CSV empty cells. These are recorded platform observations, separate from the 32-example local LegalEncDec evaluation.
+- Scores retain four decimal places. A blank score is null in JSON and empty in CSV. The screenshot labels the column Score; metric names follow Capstone Document(3).docx.
+- Dates retain the displayed time. No timezone is shown, so no conversion has been applied.
+- Best scores use visible Finished rows and keep ties. Phase 7 has three unseen rows with unknown IDs, statuses and scores; no extra rows have been added for them.
+- Submission 973189 is Cancelled but has a displayed score of 0.4805. Both are kept, and the row is excluded from the best-finished calculation.
+- Check marks are recorded as they appear. Leaderboard selection and final acceptance have not been checked separately.
+- Row statuses take priority over the repeated Running submission_8.zip banner: row 1040827 says Finished. The phase-availability banners are not used to establish the current schedule.
+- Model, method, code, configuration and checkpoint mappings remain empty. Counts alone don't establish distinct predictions, architecture coverage, adaptation techniques or reproducibility.
+
+The original screenshots remain in the chat attachments. Their filenames and SHA-256 hashes below identify the source images; the images are not duplicated here.
+
+Machine-readable copies: [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv). Unknown mappings are JSON null / CSV empty cells. The 32-example local LegalEncDec evaluation is recorded separately.
 
 ## Phase 1: Legal Language Model Pretraining
 
@@ -161,4 +161,3 @@ Visible rows: 7; counter: 10; rows not visible: 3.
 | 1038183 | submission_4.zip | 2026-11-06 23:50 | Finished | 0.3839 | No |
 | 1038086 | submission_3.zip | 2026-11-06 22:36 | Finished | 0.4229 | No |
 | 1036029 | submission_1.zip | 2026-11-05 23:43 | Finished | 0.2410 | No |
-

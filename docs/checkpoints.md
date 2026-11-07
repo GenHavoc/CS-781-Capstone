@@ -1,17 +1,19 @@
 # Checkpoints
 
-Weights are stored outside Git. For each model, record the checkpoint location, SHA-256, exact model config, tokenizer hash, training step, processed token count, code commit and checkpoint-selection metric.
+Model weights are kept outside Git. To reproduce a run, its checkpoint record needs the download location, SHA-256 hash, exact model configuration, tokenizer hash, training step, processed-token count, code commit and checkpoint-selection metric.
 
-## Previously reported Conv checkpoint
+## Conv: `best.pt`
+
+The earlier checkpoint inspection reported:
 
 - Filename: best.pt.
 - Reported size: 360.3 MB.
 - Saved step: 9,500.
 - Reported prefix validation loss: 2.1401684324955568.
 - Stored tensor elements: 90,061,440.
-- Current download location and SHA-256: pending.
 
-## MoE loader
+The current download location and SHA-256 are still missing. The checkpoint has not been inspected again as part of this repo update.
 
-The supplied loader expects `config` and `model_state` in the original checkpoint. It excludes the output-head keys and validates remaining state-dict keys. `save_pretrained` in this loader saves backbone weights only, so retain the original configuration separately.
+## MoE checkpoint format
 
+The backbone loader expects `config` and `model_state` in the original checkpoint. It removes the output-head keys and checks the remaining state-dict keys for missing or unexpected entries. Its `save_pretrained` method saves backbone weights only, so the original configuration must be kept separately.

@@ -1,8 +1,7 @@
 # References
 
-- Course source: the supplied CS781 Capstone Document. Check the latest course version for updated requirements.
+- Course brief: CS781 Capstone Document. Use the latest course version for updated requirements.
 - Dataset: https://huggingface.co/datasets/Exploration-Lab/CS-781-Capstone
 - Benchmark: IL-TUR: Benchmark for Indian Legal Text Understanding and Reasoning, https://arxiv.org/abs/2407.05399
 
-Add citations for the actual papers, tutorials and external snippets used in each implementation. Do not list a reference as an implementation source unless it was actually used.
-
+Each implementation also needs citations for the papers, tutorials and external snippets used in it. A background reference should only be listed as an implementation source if it was actually used.

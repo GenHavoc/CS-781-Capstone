@@ -1,8 +1,7 @@
 # Experiment Records
 
-Copy `template.json` for each real experiment and fill it from actual logs. Keep a stable experiment ID and connect it to a code commit and checkpoint hash.
+Each run should have its own copy of `template.json`, filled from its logs and saved configuration. Use a stable experiment ID so the code commit, checkpoint and Codabench submission can be traced back to the same run.
 
-A valid record should identify the phase, architecture, adaptation method, data sources and split, tokenizer, optimizer, learning-rate schedule, batch and accumulation sizes, seed, processed tokens, stopping step, checkpoint selection, generation or task post-processing, metrics, compute resources and Codabench submission ID.
+The record covers the phase, architecture, adaptation method, data sources and split, tokenizer, optimizer, learning-rate schedule, batch size, gradient accumulation, seed, processed tokens, stopping step and checkpoint-selection rule. It also includes decoding or task post-processing, metrics, compute resources and the Codabench submission ID.
 
-Do not count changes in learning rate or batch size as distinct architectures or adaptation techniques. Keep local evaluation and leaderboard results separate.
-
+The [submission history](../results/codabench_submissions.md) already lists the visible IDs and scores. Model and method fields remain empty until they can be matched to the original run artifacts. Keep local evaluation and Codabench results in separate fields. Learning-rate or batch-size changes are variations of a run, not separate architectures or adaptation techniques.

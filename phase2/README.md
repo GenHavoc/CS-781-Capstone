@@ -1,18 +1,17 @@
-# Phase 2 Legal Named Entity Recognition
+# Phase 2: Legal Named Entity Recognition
 
-Status: submission scores are recorded from the supplied screenshots; implementation and reproducible experiment mappings remain pending.
+For each document, the output is a set of entity character spans and labels. The primary metric is **Strict Macro-F1**.
 
-- Primary metric: Strict Macro-F1.
-- Output: Character spans and entity labels.
-- Foundation: use the applicable Phase 1 checkpoint and document its provenance.
+## Submission results
 
-Add the actual preprocessing, adaptation, training, inference and evaluation code here. Save every submitted experiment configuration and link its checkpoint and Codabench ID under `../experiments/`.
+| Best visible finished score | Submission ID(s) | Rows visible / submission counter |
+| ---: | --- | ---: |
+| 0.5102 | 975846 | 11 / 11 |
 
-The supplied brief requires LORMA and at least one knowledge-distillation experiment for this phase. It also explicitly requires experiments using all four Phase 1 architectures. Confirm current course rules and document the actual completed runs.
+These numbers come from the Codabench submission screenshot. The [full history](../results/codabench_submissions.md#phase-2-legal-named-entity-recognition) lists every visible score and status; the same records are available as [JSON](../results/codabench_submissions.json).
 
+## Code and experiment notes
 
-## Recorded Codabench submissions
+The preprocessing, adaptation, training, inference and evaluation code for this phase is not in the repo yet. The scores above have not been matched to a model, method, configuration or checkpoint. Each submission needs that mapping in [experiments/](../experiments/README.md), including the Phase 1 checkpoint it starts from.
 
-The supplied screenshot shows 11 rows against a counter of 11. The best visible Finished score is **0.5102** (Strict Macro-F1), from submission ID(s) **975846**. See the [full register](../results/codabench_submissions.md#phase-2-legal-named-entity-recognition) and [machine-readable records](../results/codabench_submissions.json).
-
-The screenshots do not identify the corresponding model, adaptation method, code/configuration or checkpoint. Map these submission IDs to the original artifacts before claiming experiment coverage or reproducibility.
+The course brief requires experiments using all four Phase 1 architectures, at least three adaptation techniques including LORMA, and at least one knowledge-distillation experiment. These requirements still need to be checked against the completed runs and current course rules.

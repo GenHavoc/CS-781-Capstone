@@ -1,21 +1,21 @@
-# CS781 Phase 1 Model Reference
+# Phase 1 Architecture Notes
 
 Updated: 6 November 2026 (India time); original recorded specifications date to 24 October 2026.
 
-This reference preserves the four models discussed for the legal-language-model capstone and the evidence currently available. Specifications supplied by the user, facts visible in pasted code, observations from screenshots, and unverified training claims are distinguished below. This is an architecture inventory, not a claim that every model has completed training or satisfies every course architecture category.
+These notes describe the four Phase 1 model designs. Implementation details come from the code where it is available; Funnel settings come from the recorded specification. Checkpoint metadata and screenshot results are noted separately. Training completion and course architecture categories still need to be checked against the original runs.
 
 ## Model inventory
 
 | Model | Architecture | Parameter count and evidence | Context |
 | --- | --- | --- | --- |
 | Conv/hybrid | Prefix Transformer with RoPE and gated causal depthwise convolution; original source recovered | Earlier reported checkpoint contains 90,061,440 stored tensor elements | 2,048 |
-| FunnelTransformer | Custom decoder-only Transformer with local-to-global causal attention and factorized embeddings | Approximately 50M, user-supplied; exact implementation/count not yet verified | 1,536 |
-| LegalEncDec | 4-layer bidirectional encoder and 4-layer causal decoder with cross-attention | 50,777,088 parameters calculated from the pasted default implementation | 2,048 per encoder/decoder stream |
+| FunnelTransformer | Custom decoder-only Transformer with local-to-global causal attention and factorized embeddings | Approximately 50M from the specification; exact implementation/count not yet verified | 1,536 |
+| LegalEncDec | 4-layer bidirectional encoder and 4-layer causal decoder with cross-attention | 50,777,088 parameters calculated from the default implementation | 2,048 per encoder/decoder stream |
 | RoPE–GQA–MoE | Decoder-only Transformer with rotary positions, grouped-query attention and Top-1 MoE | Named model90m; supplied configuration gives approximately 82.44M backbone parameters, excluding the LM head | 1,536 |
 
 ## 1. Conv/hybrid model
 
-Evidence: earlier checkpoint metadata and original `MODEL_CODE` recovered from `CS781_90M_800M_RunAll_Kaggle.ipynb`. Source is available at `phase1/models/conv_hybrid.py`; the checkpoint itself has not been re-inspected.
+Source: earlier checkpoint metadata and original `MODEL_CODE` extracted from `CS781_90M_800M_RunAll_Kaggle.ipynb`. Source is available at `phase1/models/conv_hybrid.py`; the checkpoint itself has not been re-inspected.
 
 - Reported stored tensor elements: 90,061,440.
 - Reported checkpoint size: 360.3 MB.
@@ -34,7 +34,7 @@ Evidence: earlier checkpoint metadata and original `MODEL_CODE` recovered from `
 - embedding.weight shape: (50000, 640); reported dtype: float32.
 - blocks.0.conv_gate shape: (640,).
 
-The recovered LegalPrefixConv source establishes the following:
+The LegalPrefixConv implementation uses:
 
 - RoPE positions with theta 10,000 and standard multi-head Q/K/V attention with 10 heads (not grouped-query attention).
 - Pre-RMSNorm and a final RMSNorm; epsilon 1e-6.
@@ -56,7 +56,7 @@ The tokenizer and evaluator were subsequently recovered and compared byte-for-by
 
 ## 2. FunnelTransformer
 
-Evidence: architecture specification supplied directly by the user.
+Source: the recorded architecture specification; implementation is not in the repo yet.
 
 - Custom decoder-only Transformer trained from scratch.
 - Approximately 50M total parameters.
@@ -83,15 +83,15 @@ Evidence: architecture specification supplied directly by the user.
 
 Early local attention captures nearby dependencies; later global attention integrates broader context. Sequence length remains unchanged throughout: there is no sequence pooling or downsampling.
 
-Suggested factual repository description:
+Architecture summary:
 
 “FunnelTransformer is a custom decoder-only Transformer with a local-to-global causal attention schedule and factorized, tied input/output embeddings. It uses no sequence pooling or downsampling.”
 
-The architecture name should not be used to imply pooling. Exact parameter count and implementation details still need verification against the source code.
+Despite the name, this design has no pooling. Its exact parameter count and implementation details still need to be checked against the original source.
 
 ## 3. LegalEncDec
 
-Evidence: complete model implementation pasted by the user, plus a local evaluation screenshot.
+Source: the LegalEncDec model implementation and local evaluation screenshot.
 
 ### Default ModelConfig
 
@@ -143,7 +143,7 @@ The sinusoidal position buffer adds no trainable parameters.
 
 ### Training objective and implementation details
 
-The supplied training_loss function:
+The training_loss function:
 1. Removes the final column from rows using rows[:, :-1].
 2. Uses tokens before prefix as the encoder source.
 3. Uses tokens from prefix onward as continuation labels.
@@ -169,13 +169,13 @@ Screenshot: Screenshot 2026-10-24 at 7.07.05 PM.png.
 
 The screenshot shows generation completed for 32/32 examples and evaluation returned exit code 0. These are local evaluation results, not verified Codabench leaderboard scores.
 
-The user previously described a target of approximately 50M parameters trained on 300M tokens. The actual completion of 300M training tokens is not established by the pasted model code or screenshot.
+The training target was approximately 50M parameters on 300M tokens. The model code and local evaluation screenshot do not record whether all 300M training tokens were completed.
 
 ## 4. RoPE–GQA–MoE model
 
-Evidence: standalone backbone loader pasted by the user and a screenshot of its configuration.
+Source: the standalone backbone loader and its configuration screenshot.
 
-The loader is named model90m.py and loads a checkpoint such as model90m.pt. It excludes the language-model output head. The loader itself does not document the original training loop or prove training-token counts.
+The loader is named model90m.py and loads a checkpoint such as model90m.pt. It excludes the language-model output head. The original training loop and completed token counts are not included.
 
 ### Configuration visible in screenshot
 
@@ -231,7 +231,7 @@ For the displayed configuration:
 | Backbone total without Q/K norms | 82,442,752 |
 | Backbone total with Q/K norms | 82,444,032 |
 
-Thus the name “90M” should be treated as a filename/model label until the complete language-model parameter count is verified. The omitted output-head definition is required to count the full model. Total stored parameters and parameters used per token are different for an MoE; four experts are stored while one is selected per token.
+The name “90M” is a filename/model label until the full language-model parameter count is verified. The omitted output-head definition is required to count the full model. Total stored parameters and parameters used per token are different for an MoE; four experts are stored while one is selected per token.
 
 ### Loader contract and implementation notes
 
@@ -243,11 +243,11 @@ Thus the name “90M” should be treated as a filename/model label until the co
 - save_pretrained writes backbone.pt only; it does not save a full reconstruction config.
 - forward accepts attention_mask but does not apply it in the shown implementation.
 - No incremental KV-cache mechanism is shown in this backbone loader.
-- Training objectives, load-balancing losses, generation head and training data settings are not included in the supplied loader.
+- Training objectives, load-balancing losses, generation head and training data settings are not included in this loader.
 
-## Repository documentation status
+## Files still needed
 
-Available information:
+The repo currently includes:
 - Funnel: detailed architecture specification.
 - LegalEncDec: full model code and 32-example local evaluation screenshot.
 - RoPE–GQA–MoE: backbone loader and configuration screenshot.
@@ -255,14 +255,13 @@ Available information:
 - LegalEncDec: original 300M-budget notebook and model/training utilities.
 - Original tokenizer and evaluator: recovered and matched to notebook payloads.
 
-Still needed to reconstruct the repository accurately:
-- Full Funnel source code; Conv source has now been recovered.
+The remaining files and run details are:
+- Full Funnel source code.
 - Original MoE language-model output head and training code.
 - Actual training configurations, seeds, data splits and processed token counts.
 - Checkpoint provenance and exact checkpoint selection.
 - Inference/decoding configurations used for each submission.
-- Codabench submission IDs, dates and scores.
+- Model, method and checkpoint mappings for the [recorded Codabench IDs, dates and scores](../results/codabench_submissions.md).
 - Later-phase implementations and experiment records.
 
-Do not invent missing scores, training completion, architecture-category acceptance, or experimental conclusions.
-
+The submission history records scores, but the missing run artifacts are still needed to establish training completion, architecture coverage and reproducibility.

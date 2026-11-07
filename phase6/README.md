@@ -1,18 +1,17 @@
-# Phase 6 Abstractive Summarization
+# Phase 6: Abstractive Summarization
 
-Status: submission scores are recorded from the supplied screenshots; implementation and reproducible experiment mappings remain pending.
+The task is to generate an abstractive summary for each document. The primary metric is **BERTScore F1**.
 
-- Primary metric: BERTScore F1.
-- Output: A generated summary per document.
-- Foundation: use the applicable Phase 1 checkpoint and document its provenance.
+## Submission results
 
-Add the actual preprocessing, adaptation, training, inference and evaluation code here. Save every submitted experiment configuration and link its checkpoint and Codabench ID under `../experiments/`.
+| Best visible finished score | Submission ID(s) | Rows visible / submission counter |
+| ---: | --- | ---: |
+| 0.8448 | 1028539 | 6 / 6 |
 
-The supplied brief requires LORMA and at least one knowledge-distillation experiment for this phase. It also explicitly requires experiments using all four Phase 1 architectures. Confirm current course rules and document the actual completed runs.
+These numbers come from the Codabench submission screenshot. The [full history](../results/codabench_submissions.md#phase-6-abstractive-summarization) lists every visible score and status; the same records are available as [JSON](../results/codabench_submissions.json).
 
+## Code and experiment notes
 
-## Recorded Codabench submissions
+The preprocessing, adaptation, training, inference and evaluation code for this phase is not in the repo yet. The scores above have not been matched to a model, method, configuration or checkpoint. Each submission needs that mapping in [experiments/](../experiments/README.md), including the Phase 1 checkpoint it starts from.
 
-The supplied screenshot shows 6 rows against a counter of 6. The best visible Finished score is **0.8448** (BERTScore F1), from submission ID(s) **1028539**. See the [full register](../results/codabench_submissions.md#phase-6-abstractive-summarization) and [machine-readable records](../results/codabench_submissions.json).
-
-The screenshots do not identify the corresponding model, adaptation method, code/configuration or checkpoint. Map these submission IDs to the original artifacts before claiming experiment coverage or reproducibility.
+The course brief requires experiments using all four Phase 1 architectures, at least three adaptation techniques including LORMA, and at least one knowledge-distillation experiment. These requirements still need to be checked against the completed runs and current course rules.

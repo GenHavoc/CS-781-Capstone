@@ -1,27 +1,30 @@
-# Phase 1 Legal Language Model Pretraining
+# Phase 1: Legal Language Model Pretraining
 
-The model source files supplied for this repository are in `models/`. Recorded architecture settings are in `configs/`.
+This phase covers the four foundation-model designs. Model code is in `models/` and architecture settings are in `configs/`.
 
 | Model | Code status | Configuration status |
 | --- | --- | --- |
-| Conv/hybrid | Original model and Run-All training utilities recovered | Matches recorded checkpoint configuration |
-| FunnelTransformer | Source pending | User-supplied specification |
-| LegalEncDec | Model and Run-All training utilities recovered | Complete default model configuration |
-| RoPE–GQA–MoE | Supplied backbone loader only | Partial screenshot configuration; checkpoint supplies remaining settings |
+| Conv/hybrid | Model and Run-All training utilities | Matches recorded checkpoint configuration |
+| FunnelTransformer | Source pending | Recorded architecture specification |
+| LegalEncDec | Model and Run-All training utilities | Complete default model configuration |
+| RoPE–GQA–MoE | Backbone loader only | Partial screenshot configuration; checkpoint supplies remaining settings |
 
-See [the architecture reference](../docs/architectures.md) for attention layouts, parameter accounting and known limitations.
+The [architecture notes](../docs/architectures.md) explain how the models differ and how their parameter counts were calculated.
 
-## Remaining reproducibility material
+## Training and evaluation
 
-The original Conv and LegalEncDec notebooks, their training/data preparation utilities, tokenizer and evaluation script are now included. The saved run configurations, checkpoint locations/hashes, actual validation split and processed-token counts, generation settings and submission-to-code mappings still need to be attached. See `notebooks/README.md` and `runs/README.md`.
+The Conv and LegalEncDec [Kaggle notebooks](notebooks/README.md) are the training entry points. Their model, data-preparation, training and generation modules are also available under [runs/](runs/README.md). The original tokenizer and evaluation script are included.
 
-For text continuation, each official test prompt requires a 128-word continuation in `prediction.json`. The continuation excludes the original prompt. The file belongs directly at the root of its Codabench submission ZIP. These details are from the supplied capstone brief.
+For the official continuation task, each test prompt needs a **128-word continuation** in `prediction.json`. The continuation excludes the prompt, and the JSON file goes directly at the root of the Codabench ZIP. These are the output rules in the course brief.
 
-Model definitions alone do not establish that a training run or submission was completed.
+## Submission results
 
+| Best visible finished score | Metric | Submission ID | Rows visible / submission counter |
+| ---: | --- | --- | ---: |
+| 0.8314 | BERTScore F1 | 964722 | 17 / 17 |
 
-## Recorded Codabench submissions
+The [submission history](../results/codabench_submissions.md#phase-1-legal-language-model-pretraining) lists the scores and statuses for all 17 visible submissions. [JSON records](../results/codabench_submissions.json) are available too. The separate 32-example LegalEncDec local evaluation is described in [results/](../results/README.md).
 
-The supplied screenshot shows 17 rows against a counter of 17. The best visible Finished score is **0.8314** (BERTScore F1), from submission ID(s) **964722**. See the [full register](../results/codabench_submissions.md#phase-1-legal-language-model-pretraining) and [machine-readable records](../results/codabench_submissions.json).
+## Remaining work
 
-The screenshots do not identify the corresponding model, adaptation method, code/configuration or checkpoint. Map these submission IDs to the original artifacts before claiming experiment coverage or reproducibility.
+The saved run configurations, checkpoint locations and hashes, validation split, completed token counts and generation settings still need to be added. Submission IDs also need to be matched to their exact model, code and checkpoint. The included model definitions and notebook budgets alone don't establish completed training runs.
