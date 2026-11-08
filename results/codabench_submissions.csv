@@ -49,14 +49,14 @@ phase,submission_id,filename,date_displayed,status,score_displayed,check_mark_vi
 4,1001312,submission.zip,2026-10-18 23:07,Finished,0.6796,False,LegalEncDec 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.58 AM.png
 4,1000935,submission.zip,2026-10-18 17:25,Finished,0.6806,False,Decoder-only 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.58 AM.png
 4,999931,submission.zip,2026-10-18 03:00,Finished,0.5879,False,,,,,,Screenshot 2026-11-08 at 12.27.58 AM.png
-5,1010677,submission.zip,2026-10-27 01:09,Finished,0.4334,True,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-5,1010672,submission.zip,2026-10-27 01:08,Finished,0.4281,False,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-5,1010670,submission.zip,2026-10-27 01:07,Finished,0.3650,False,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-5,1010669,submission_copy_2.zip,2026-10-27 01:06,Finished,0.4251,False,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-5,1010667,submission.zip,2026-10-27 01:05,Finished,0.4323,False,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-5,1010662,submission.zip,2026-10-27 01:04,Finished,0.4269,False,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-5,1010660,submission_v3.zip,2026-10-27 01:03,Finished,0.3843,False,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-5,1010658,submission.zip,2026-10-27 01:02,Finished,0.3866,False,,,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010677,submission.zip,2026-10-27 01:09,Finished,0.4334,True,Conv/hybrid,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010672,submission.zip,2026-10-27 01:08,Finished,0.4281,False,Conv/hybrid,LoRA,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010670,submission.zip,2026-10-27 01:07,Finished,0.3650,False,Decoder-only 50M,Prefix tuning,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010669,submission_copy_2.zip,2026-10-27 01:06,Finished,0.4251,False,,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010667,submission.zip,2026-10-27 01:05,Finished,0.4323,False,RoPE–GQA–MoE,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010662,submission.zip,2026-10-27 01:04,Finished,0.4269,False,Conv/hybrid,LoRMA,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010660,submission_v3.zip,2026-10-27 01:03,Finished,0.3843,False,LegalEncDec 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
+5,1010658,submission.zip,2026-10-27 01:02,Finished,0.3866,False,Decoder-only 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
 6,1028993,submission_1.zip,2026-11-03 06:12,Finished,0.8440,False,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
 6,1028650,submission_1.zip,2026-11-03 02:33,Finished,0.8428,False,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
 6,1028539,submission_1.zip,2026-11-03 00:37,Finished,0.8448,True,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
