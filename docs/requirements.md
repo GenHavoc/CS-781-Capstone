@@ -72,7 +72,8 @@ Phase 8 remains TBA and may involve independent evaluation of a submitted model.
 - [x] Conv and LegalEncDec source and original training notebooks are recovered.
 - [x] Original tokenizer/evaluator are recovered and matched to notebook payloads.
 - [x] Uploaded Funnel standalone model, trainer and generator saved as a Python file.
-- [ ] Original complete MoE generation/training pipeline.
+- [x] Separate 2,048-context fine-grained MoE model and training script preserved from the upload.
+- [ ] Original complete generation/training pipeline for the earlier four-expert MoE checkpoint.
 - [ ] Resolve Funnel parameter-budget difference: uploaded defaults have 45,327,360 parameters, below the 50M minimum; the earlier specification has FFN width 2,496 instead of 2,048.
 - [ ] Actual training logs, saved run configurations, processed token counts and checkpoint hashes for all runs.
 - [x] Screenshot-based Codabench register for all seven phases: 71 visible rows; three Phase 7 rows remain unseen.

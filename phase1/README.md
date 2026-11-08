@@ -1,6 +1,6 @@
 # Phase 1: Legal Language Model Pretraining
 
-This phase covers the four foundation-model designs. All four `.py` files are in [models/](models/README.md), with architecture settings in `configs/`. The MoE file contains its backbone loader only.
+This phase covers the four foundation-model designs. All four `.py` files are in [models/](models/README.md), with architecture settings in `configs/`. The original MoE file contains its backbone loader only. A separate 2,048-context fine-grained MoE training variant is also included in `models/model_g_legal_lm_2048.py`.
 
 | Model | Code status | Configuration status |
 | --- | --- | --- |

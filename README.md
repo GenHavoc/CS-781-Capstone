@@ -29,7 +29,7 @@ These are the best scores among the finished submissions visible in my Codabench
 
 The [architecture notes](docs/architectures.md) cover the attention layouts, layer settings and parameter counts. The MoE count above is for the backbone only; its `model90m.pt` filename is a model label, not a verified full-model count.
 
-All four model files are in [phase1/models/](phase1/models/README.md): [Conv](phase1/models/conv_hybrid.py), [Funnel](phase1/models/funnel.py), [LegalEncDec](phase1/models/legal_enc_dec.py) and [MoE backbone](phase1/models/rope_gqa_moe_backbone.py). Conv and LegalEncDec have training notebooks; Funnel includes a standalone trainer and generator. The full MoE training/generation pipeline, checkpoint files and later-phase implementations are still to be added.
+All four model files are in [phase1/models/](phase1/models/README.md): [Conv](phase1/models/conv_hybrid.py), [Funnel](phase1/models/funnel.py), [LegalEncDec](phase1/models/legal_enc_dec.py) and [MoE backbone](phase1/models/rope_gqa_moe_backbone.py). Conv and LegalEncDec have training notebooks; Funnel includes a standalone trainer and generator. An additional [fine-grained MoE training script](phase1/models/model_g_legal_lm_2048.py) is included as a separate 2,048-context variant. It does not identify the architecture used for the earlier MoE checkpoint. Checkpoint files and later-phase implementations are still to be added.
 
 ## Running the code
 

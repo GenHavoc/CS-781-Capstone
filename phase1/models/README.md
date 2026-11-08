@@ -7,6 +7,14 @@
 | LegalEncDec | [legal_enc_dec.py](legal_enc_dec.py) | Encoder–decoder model; training workflow in the LegalEncDec notebook and runtime modules |
 | RoPE–GQA–MoE | [rope_gqa_moe_backbone.py](rope_gqa_moe_backbone.py) | Backbone and checkpoint loader; LM head and full training pipeline are not included |
 
+## Additional MoE variant
+
+[model_g_legal_lm_2048.py](model_g_legal_lm_2048.py) preserves the uploaded `Pasted text(8).txt` source. It defines a full `RopeTransformer` language model, token preparation, a training loop, checkpoint writing and generation helpers. Its default settings use a 2,048-token context, 10 layers, eight query heads/two KV heads, and a shared expert plus 16 routed experts with Top-2 routing. Optional switches select the earlier four-expert Top-1 layout, local attention, and multi-token prediction. The default configured training budget is 500M tokens; completion is not shown by the source.
+
+This script is separate from `rope_gqa_moe_backbone.py`. Its default 16-expert architecture does not match the earlier four-expert backbone loader or prove that either model produced a recorded submission. It uses Kaggle-specific dataset and tokenizer paths; check those settings before running. The script writes checkpoints but its shown training function does not load one for resuming.
+
+SHA-256: `2683500cbc316c487275ee85d7e407713763803b0ae348d2eba475eaaef975e7`.
+
 ## Funnel source
 
 `funnel.py` is the uploaded `Pasted text(7).txt` saved without source changes. The original header uses the filename `model_e_funnel_standalone.py`; use `phase1/models/funnel.py` for commands in this repo.

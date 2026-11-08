@@ -273,13 +273,13 @@ The name “90M” is a filename/model label until the full language-model param
 The repo currently includes:
 - Funnel: standalone model, trainer and generator, plus the earlier architecture specification.
 - LegalEncDec: full model code and 32-example local evaluation screenshot.
-- RoPE–GQA–MoE: backbone loader and configuration screenshot.
+- RoPE–GQA–MoE: four-expert backbone loader and configuration screenshot; also a separate fine-grained MoE training script in `phase1/models/model_g_legal_lm_2048.py` with 2,048 context and 16 routed experts by default.
 - Conv/hybrid: original model/training code, three notebook versions, earlier checkpoint metadata and tensor names.
 - LegalEncDec: original 300M-budget notebook and model/training utilities.
 - Original tokenizer and evaluator: recovered and matched to notebook payloads.
 
 The remaining files and run details are:
-- Original MoE language-model output head and training code.
+- Original MoE language-model output head and training code for the earlier four-expert checkpoint. The separate 2,048-context script is not established as its source.
 - Actual training configurations, seeds, data splits and processed token counts.
 - Checkpoint provenance and exact checkpoint selection.
 - Inference/decoding configurations used for each submission.
