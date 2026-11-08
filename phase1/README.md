@@ -23,24 +23,26 @@ For the official continuation task, each test prompt needs a **128-word continua
 
 ## Submission results
 
-| Best visible finished score | Metric | Submission ID | Rows visible / submission counter |
-| ---: | --- | --- | ---: |
-| 0.8314 | BERTScore F1 | 964722 | 17 / 17 |
+| Best screenshot score | Metric | Submission ID |
+| ---: | --- | --- |
+| 0.8314 | BERTScore F1 | 964722 |
 
 The [submission history](../results/codabench_submissions.md#phase-1-legal-language-model-pretraining) lists the scores and statuses for all 17 submissions shown in the screenshot. [JSON records](../results/codabench_submissions.json) are available too.
 
-### Scores I can tie to a model
+### Model scores
 
-| Model | Recorded result | Where it comes from |
-| --- | --- | --- |
-| Conv/hybrid | Prefix validation loss 2.140168 at training step 9,500 | Saved checkpoint details reported on 24 October; this is not a BERTScore result |
-| LegalEncDec | Local BERTScore F1 0.812633 on 32 examples | Local evaluation screenshot from 24 October; also recorded in [results/](../results/README.md) |
-| FunnelTransformer | No model-specific score available | Code and configuration only |
-| RoPE–GQA–MoE backbone | No model-specific score available | Backbone loader and partial configuration only |
-| Fine-grained MoE variant | No model-specific score available | Separate training script; no checkpoint or evaluation supplied |
+These are the Phase 1 model scores I reported. The screenshot shows the scores for the three rows with IDs below; I identified their models. I have not linked the Conv or SwiGLU scores to a submission ID.
 
-Codabench submission **964722 scored 0.8314**, but its ZIP, checkpoint and run record have not been supplied. The Phase 1 submissions shown are dated **28 September–6 October**. The Conv checkpoint and LegalEncDec local evaluation described above were reported later in October, so I cannot use either to assign that earlier submission to a model.
+| Model | BERTScore F1 | Submission ID | Record |
+| --- | ---: | --- | --- |
+| Conv/hybrid | 0.838 | — | Reported run score; evaluation record still needed |
+| SwiGLU model | 0.8313 | — | Reported run score; exact model code and evaluation record still needed |
+| FunnelTransformer | 0.8236 | 964717 | Model attribution from me; score and ID in screenshot |
+| LegalEncDec 50M | 0.7976 | 950906 | Model attribution from me; score and ID in screenshot |
+| Decoder-only 50M | 0.7950 | 950394 | Model attribution from me; score and ID in screenshot; code not in this repo |
+
+The screenshot's top Phase 1 result is **0.8314 (964722)**. I have not identified its model, and it is different from the reported **0.8313** SwiGLU score. The Conv **0.838** is not in the supplied screenshot, so the table above does not change the screenshot-based best result. The separate LegalEncDec local evaluation scored **0.812633** on 32 examples. The Conv checkpoint's prefix validation loss was **2.140168** at step 9,500; that is a different metric.
 
 ## Remaining work
 
-The saved run configurations, checkpoint locations and hashes, validation split, completed token counts and generation settings still need to be added. Submission IDs also need to be matched to their exact model, code and checkpoint. The included model definitions and notebook budgets alone don't establish completed training runs.
+The saved run configurations, checkpoint locations and hashes, validation split, completed token counts and generation settings still need to be added. The remaining submission IDs and the exact code and checkpoints for these runs still need to be matched. The included model definitions and notebook budgets alone don't establish completed training runs.

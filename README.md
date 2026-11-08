@@ -18,6 +18,8 @@ These are the best scores among the finished submissions visible in my Codabench
 | 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 |
 | 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 |
 
+The [Phase 1 model scores](phase1/README.md#model-scores) include the Conv result you reported as 0.838, SwiGLU at 0.8313, and the Funnel, encoder–decoder and 50M decoder results. The Conv and SwiGLU scores have no submission ID in the supplied screenshot, so the Phase 1 value above remains the best screenshot result.
+
 ## Phase 1 models
 
 | Model | Design | Parameters | Context | Available material |

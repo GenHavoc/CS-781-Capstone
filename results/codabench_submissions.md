@@ -2,15 +2,15 @@
 
 All 71 visible rows are transcribed below. The phase counters sum to 74; three Phase 7 rows are outside the screenshot. There are 65 visible Finished rows, two Failed rows and four Cancelled rows.
 
-| Phase | Task | Metric | Best visible finished score | Submission ID(s) | Visible / counter |
-| --- | --- | --- | ---: | --- | ---: |
-| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 964722 | 17 / 17 |
-| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 975846 | 11 / 11 |
-| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 991428, 991425 | 12 / 12 |
-| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003747, 1003593 | 10 / 10 |
-| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 1010677 | 8 / 8 |
-| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 | 6 / 6 |
-| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 | 7 / 10 |
+| Phase | Task | Metric | Best visible finished score | Submission ID(s) |
+| --- | --- | --- | ---: | --- |
+| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 964722 |
+| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 975846 |
+| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 991428, 991425 |
+| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003747, 1003593 |
+| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 1010677 |
+| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 |
+| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 |
 
 ## Reading the records
 
@@ -22,11 +22,11 @@ The history comes from seven Codabench My Submissions screenshots. It has not be
 - Submission 973189 is Cancelled but has a displayed score of 0.4805. Both are kept, and the row is excluded from the best-finished calculation.
 - Check marks are recorded as they appear. Leaderboard selection and final acceptance have not been checked separately.
 - Row statuses take priority over the repeated Running submission_8.zip banner: row 1040827 says Finished. The phase-availability banners are not used to establish the current schedule.
-- Model, method, code, configuration and checkpoint mappings remain empty. Counts alone don't establish distinct predictions, architecture coverage, adaptation techniques or reproducibility.
+- The author matched three Phase 1 scores to models: FunnelTransformer (964717), LegalEncDec 50M (950906) and decoder-only 50M (950394). Their exact code and checkpoints remain to be linked. Counts alone don't establish distinct predictions, architecture coverage, adaptation techniques or reproducibility.
 
 The original screenshots remain in the chat attachments. Their filenames and SHA-256 hashes below identify the source images; the images are not duplicated here.
 
-Machine-readable copies: [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv). Unknown mappings are JSON null / CSV empty cells. The 32-example local LegalEncDec evaluation is recorded separately.
+Machine-readable copies: [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv). The three author-attributed model mappings are filled in there; unknown mappings are JSON null / CSV empty cells. The 32-example local LegalEncDec evaluation is recorded separately.
 
 ## Phase 1: Legal Language Model Pretraining
 
