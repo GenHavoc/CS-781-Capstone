@@ -31,17 +31,17 @@ The [submission history](../results/codabench_submissions.md#phase-1-legal-langu
 
 ### Model scores
 
-These are the Phase 1 model scores I reported. The screenshot shows the scores for the three rows with IDs below; I identified their models. I have not linked the Conv or SwiGLU scores to a submission ID.
+These are the Phase 1 model scores I reported. The screenshot shows the scores for the four rows with IDs below; I identified their models. I have not linked the Conv score to a submission ID.
 
 | Model | BERTScore F1 | Submission ID | Record |
 | --- | ---: | --- | --- |
 | Conv/hybrid | 0.838 | — | Reported run score; evaluation record still needed |
-| SwiGLU model | 0.8313 | — | Reported run score; exact model code and evaluation record still needed |
+| SwiGLU model | 0.8314 | 964722 | Model attribution from me; score and ID in screenshot; exact code and checkpoint still needed |
 | FunnelTransformer | 0.8236 | 964717 | Model attribution from me; score and ID in screenshot |
 | LegalEncDec 50M | 0.7976 | 950906 | Model attribution from me; score and ID in screenshot |
 | Decoder-only 50M | 0.7950 | 950394 | Model attribution from me; score and ID in screenshot; code not in this repo |
 
-The screenshot's top Phase 1 result is **0.8314 (964722)**. I have not identified its model, and it is different from the reported **0.8313** SwiGLU score. The Conv **0.838** is not in the supplied screenshot, so the table above does not change the screenshot-based best result. The separate LegalEncDec local evaluation scored **0.812633** on 32 examples. The Conv checkpoint's prefix validation loss was **2.140168** at step 9,500; that is a different metric.
+The screenshot's top Phase 1 result is **0.8314 (964722)**, which I identified as SwiGLU. The Conv **0.838** is not in the supplied screenshot, so the screenshot-based best result remains 0.8314. The separate LegalEncDec local evaluation scored **0.812633** on 32 examples. The Conv checkpoint's prefix validation loss was **2.140168** at step 9,500; that is a different metric.
 
 ## Remaining work
 
