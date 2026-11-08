@@ -19,22 +19,22 @@ I did not fully fine-tune the Conv model for this phase. The exact checkpoints, 
 
 ## Submissions
 
-The best finished score in the supplied Codabench screenshot is **0.5102 (975846)**. These are the 11 displayed rows, in screenshot order:
+The best finished score in the supplied Codabench screenshot is **0.5102 (975846)**. The experiment assignments below are **working guesses**, based on which submissions are close together in time and which scores cluster together. The screenshot does not identify a model or method. These assignments have low confidence and should not be cited as measured model comparisons.
 
-| ID | Score | Status | Experiment |
+| ID | Score | Status | Possible experiment (unverified) |
 | --- | ---: | --- | --- |
-| 977930 | 0.4908 | Finished | To match |
-| 975846 | 0.5102 | Finished | To match |
-| 975795 | 0.4779 | Finished | To match |
-| 973189 | 0.4805 | Cancelled | To match |
-| 972951 | 0.4861 | Finished | To match |
-| 972542 | 0.3734 | Finished | To match |
-| 972385 | 0.3493 | Finished | To match |
-| 970083 | 0.3786 | Finished | To match |
-| 970073 | 0.3774 | Finished | To match |
-| 967085 | 0.3455 | Finished | To match |
-| 967063 | 0.3481 | Finished | To match |
+| 977930 | 0.4908 | Finished | SwiGLU–Funnel distillation |
+| 975846 | 0.5102 | Finished | SwiGLU full fine-tuning, later run |
+| 975795 | 0.4779 | Finished | SwiGLU LoRA |
+| 973189 | 0.4805 | Cancelled | SwiGLU LoRA attempt |
+| 972951 | 0.4861 | Finished | SwiGLU full fine-tuning |
+| 972542 | 0.3734 | Finished | Funnel full fine-tuning, later run |
+| 972385 | 0.3493 | Finished | Funnel full fine-tuning |
+| 970083 | 0.3786 | Finished | LegalEncDec 50M full fine-tuning, later run |
+| 970073 | 0.3774 | Finished | LegalEncDec 50M full fine-tuning |
+| 967085 | 0.3455 | Finished | Decoder-only 50M full fine-tuning, later run |
+| 967063 | 0.3481 | Finished | Decoder-only 50M full fine-tuning |
 
-The screenshot shows a ZIP filename, date, status and score for each row, but does not name the model or adaptation method. Several submissions may be revisions of the same experiment. The [full submission history](../results/codabench_submissions.md#phase-2-legal-named-entity-recognition) and [JSON records](../results/codabench_submissions.json) preserve the original rows. The experiment column can be filled when the upload ZIPs, logs or a submission-ID list identify the runs.
+The pairs at 967063/967085, 970073/970083 and 972385/972542 are close in submission time; the assignments to decoder, encoder–decoder and Funnel are guesses. The later 0.4779–0.5102 results could also belong to different methods than shown. The cancelled row has a displayed score but was not a finished submission. The [full submission history](../results/codabench_submissions.md#phase-2-legal-named-entity-recognition) and [JSON records](../results/codabench_submissions.json) retain the screenshot facts with model and method fields empty. Upload ZIPs, logs or a submission-ID list can settle the mapping.
 
 The course brief also calls for LORMA and method coverage. The experiments above are the ones reported so far; the remaining methods and their submission IDs need to be checked against the original runs.
