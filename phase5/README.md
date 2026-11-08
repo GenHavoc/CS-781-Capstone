@@ -12,12 +12,12 @@ I ran the experiments in notebooks and submitted their outputs to Codabench. The
 | 1010667 | 0.4323 | RoPE–GQA–MoE | Full fine-tuning |
 | 1010672 | 0.4281 | Conv/hybrid (90M) | LoRA |
 | 1010662 | 0.4269 | Conv/hybrid (90M) | LoRMA |
-| 1010669 | 0.4251 | Teacher and student not specified | Knowledge distillation |
+| 1010669 | 0.4251 | RoPE–GQA–MoE → Conv/hybrid | Knowledge distillation |
 | 1010658 | 0.3866 | Decoder-only 50M | Full fine-tuning |
 | 1010660 | 0.3843 | LegalEncDec 50M | Full fine-tuning |
 | 1010670 | 0.3650 | Decoder-only 50M | Prefix tuning |
 
-The model for the distillation run is not specified in the available experiment table. The [submission history](../results/codabench_submissions.md#phase-5-legal-statute-identification) and [JSON records](../results/codabench_submissions.json) include the dates and filenames.
+For this run, RoPE–GQA–MoE was the teacher and Conv/hybrid was the student. The [submission history](../results/codabench_submissions.md#phase-5-legal-statute-identification) and [JSON records](../results/codabench_submissions.json) include the dates and filenames.
 
 ## Code and experiment notes
 
