@@ -1,17 +1,22 @@
 # Phase 6: Abstractive Summarization
 
-The task is to generate an abstractive summary for each document. The primary metric is **BERTScore F1**.
+The task is to generate an abstractive summary for each document. The metric is **BERTScore F1**.
 
-## Submission results
+## Results
 
-| Best visible finished score | Submission ID(s) | Rows visible / submission counter |
-| ---: | --- | ---: |
-| 0.8448 | 1028539 | 6 / 6 |
+I ran the experiments in notebooks and submitted their outputs to Codabench. The best score was **0.8448** from **1028539**.
 
-These numbers come from the Codabench submission screenshot. The [full history](../results/codabench_submissions.md#phase-6-abstractive-summarization) lists every visible score and status; the same records are available as [JSON](../results/codabench_submissions.json).
+| Submission ID | BERTScore F1 | Model | Method |
+| --- | ---: | --- | --- |
+| 1028539 | 0.8448 | Conv/hybrid | Full fine-tuning |
+| 1028993 | 0.8440 | Conv/hybrid | LoRA |
+| 1028650 | 0.8428 | RoPE–GQA–MoE | Full fine-tuning |
+| 1019925 | 0.8416 | RoPE–GQA–MoE → Conv/hybrid | Knowledge distillation |
+| 1016889 | 0.8405 | Conv/hybrid | LoRMA |
+| 1021502 | 0.8397 | Backbone not specified | Pfeiffer adapters |
+
+For **1019925**, RoPE–GQA–MoE was the teacher and Conv/hybrid was the student. The Pfeiffer adapter run's backbone has not been identified. The [submission history](../results/codabench_submissions.md#phase-6-abstractive-summarization) and [JSON records](../results/codabench_submissions.json) include the dates and filenames.
 
 ## Code and experiment notes
 
-The preprocessing, adaptation, training, inference and evaluation code for this phase is not in the repo yet. The scores above have not been matched to a model, method, configuration or checkpoint. Each submission needs that mapping in [experiments/](../experiments/README.md), including the Phase 1 checkpoint it starts from.
-
-The course brief requires experiments using all four Phase 1 architectures, at least three adaptation techniques including LORMA, and at least one knowledge-distillation experiment. These requirements still need to be checked against the completed runs and current course rules.
+The Phase 6 preprocessing, training and inference code and the exact checkpoint for each submission still need to be added.

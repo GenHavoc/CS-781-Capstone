@@ -57,12 +57,12 @@ phase,submission_id,filename,date_displayed,status,score_displayed,check_mark_vi
 5,1010662,submission.zip,2026-10-27 01:04,Finished,0.4269,False,Conv/hybrid,LoRMA,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
 5,1010660,submission_v3.zip,2026-10-27 01:03,Finished,0.3843,False,LegalEncDec 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
 5,1010658,submission.zip,2026-10-27 01:02,Finished,0.3866,False,Decoder-only 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.06 AM.png
-6,1028993,submission_1.zip,2026-11-03 06:12,Finished,0.8440,False,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
-6,1028650,submission_1.zip,2026-11-03 02:33,Finished,0.8428,False,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
-6,1028539,submission_1.zip,2026-11-03 00:37,Finished,0.8448,True,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
-6,1021502,submission_2.zip,2026-10-30 18:45,Finished,0.8397,False,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
-6,1019925,submission_1.zip,2026-10-30 04:22,Finished,0.8416,False,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
-6,1016889,submission_1.zip,2026-10-29 00:06,Finished,0.8405,False,,,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
+6,1028993,submission_1.zip,2026-11-03 06:12,Finished,0.8440,False,Conv/hybrid,LoRA,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
+6,1028650,submission_1.zip,2026-11-03 02:33,Finished,0.8428,False,RoPE–GQA–MoE,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
+6,1028539,submission_1.zip,2026-11-03 00:37,Finished,0.8448,True,Conv/hybrid,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
+6,1021502,submission_2.zip,2026-10-30 18:45,Finished,0.8397,False,,Pfeiffer adapters,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
+6,1019925,submission_1.zip,2026-10-30 04:22,Finished,0.8416,False,RoPE–GQA–MoE → Conv/hybrid,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
+6,1016889,submission_1.zip,2026-10-29 00:06,Finished,0.8405,False,Conv/hybrid,LoRMA,,,,Screenshot 2026-11-08 at 12.28.13 AM.png
 7,1040827,submission_8.zip,2026-11-07 23:02,Finished,0.4324,True,,,,,,Screenshot 2026-11-08 at 12.28.20 AM.png
 7,1040238,submission_7.zip,2026-11-07 18:11,Finished,0.3302,False,,,,,,Screenshot 2026-11-08 at 12.28.20 AM.png
 7,1040081,submission_6.zip,2026-11-07 16:47,Finished,0.3231,False,,,,,,Screenshot 2026-11-08 at 12.28.20 AM.png
