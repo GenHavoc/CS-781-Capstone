@@ -13,7 +13,7 @@ I ran the experiments in notebooks and submitted their outputs to Codabench. The
 | 1028650 | 0.8428 | RoPE–GQA–MoE | Full fine-tuning |
 | 1019925 | 0.8416 | RoPE–GQA–MoE → Conv/hybrid | Knowledge distillation |
 | 1016889 | 0.8405 | Conv/hybrid | LoRMA |
-| 1021502 | 0.8397 | Backbone not specified | Pfeiffer adapters |
+| 1021502 | 0.8397 | Conv/hybrid | Pfeiffer adapters |
 
 For **1019925**, RoPE–GQA–MoE was the teacher and Conv/hybrid was the student. The Pfeiffer adapter run's backbone has not been identified. The [submission history](../results/codabench_submissions.md#phase-6-abstractive-summarization) and [JSON records](../results/codabench_submissions.json) include the dates and filenames.
 
