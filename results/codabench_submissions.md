@@ -7,7 +7,7 @@ All 71 visible rows are transcribed below. The phase counters sum to 74; three P
 | 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 964722 |
 | 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 975846 |
 | 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 991428, 991425 |
-| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003747, 1003593 |
+| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003593 |
 | 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 1010677 |
 | 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 |
 | 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 |
@@ -18,7 +18,7 @@ The history comes from seven Codabench My Submissions screenshots. It has not be
 
 - Scores retain four decimal places. A blank score is null in JSON and empty in CSV. The screenshot labels the column Score; metric names follow Capstone Document(3).docx.
 - Dates retain the displayed time. No timezone is shown, so no conversion has been applied.
-- Best scores use visible Finished rows and keep ties. Phase 7 has three unseen rows with unknown IDs, statuses and scores; no extra rows have been added for them.
+- Best scores use visible Finished rows. The Phase 4 summary shows selected submission 1003593; both tied runs remain in the detailed history. Phase 7 has three unseen rows with unknown IDs, statuses and scores; no extra rows have been added for them.
 - Submission 973189 is Cancelled but has a displayed score of 0.4805. Both are kept, and the row is excluded from the best-finished calculation.
 - Check marks are recorded as they appear. Leaderboard selection and final acceptance have not been checked separately.
 - Row statuses take priority over the repeated Running submission_8.zip banner: row 1040827 says Finished. The phase-availability banners are not used to establish the current schedule.

@@ -6,14 +6,14 @@ The Phase 1 work covers four model designs: a convolution–Transformer hybrid, 
 
 ## Results
 
-These are the best scores among the finished submissions visible in my Codabench screenshots. Ties are listed together.
+These are the best scores from the submitted notebook runs. For Phase 4, the selected submission is shown.
 
 | Phase | Task | Metric | Best visible finished score | Submission ID(s) |
 | --- | --- | --- | ---: | --- |
 | 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 964722 |
 | 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 975846 |
 | 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 991428, 991425 |
-| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003747, 1003593 |
+| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 1003593 |
 | 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 1010677 |
 | 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 1028539 |
 | 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 1040827 |
