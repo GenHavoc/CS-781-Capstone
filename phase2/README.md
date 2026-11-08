@@ -19,7 +19,7 @@ I did not fully fine-tune the Conv model for this phase. The exact checkpoints, 
 
 ## Submissions
 
-The best finished score in the supplied Codabench screenshot is **0.5102 (975846)**. The scores, IDs and statuses are from the screenshot. I confirmed which experiment produced each submission; the screenshot itself does not name the models or methods.
+I ran these experiments in notebooks and submitted their outputs to Codabench. The best finished score was **0.5102 (975846)**.
 
 | ID | Score | Status | Experiment |
 | --- | ---: | --- | --- |
@@ -35,6 +35,6 @@ The best finished score in the supplied Codabench screenshot is **0.5102 (975846
 | 967085 | 0.3455 | Finished | Decoder-only 50M full fine-tuning, later run |
 | 967063 | 0.3481 | Finished | Decoder-only 50M full fine-tuning |
 
-The cancelled row has a displayed score but was not a finished submission. The [full submission history](../results/codabench_submissions.md#phase-2-legal-named-entity-recognition) and [JSON records](../results/codabench_submissions.json) include these author-confirmed model and method labels. The exact run files and checkpoints still need to be linked.
+The 0.4805 run was cancelled. The [full submission history](../results/codabench_submissions.md#phase-2-legal-named-entity-recognition) and [JSON records](../results/codabench_submissions.json) list all submissions. The exact run files and checkpoints still need to be linked.
 
 The course brief also calls for LORMA and method coverage. The experiments above are the ones reported so far. Any additional methods and their submission IDs need to be checked against the original runs.
