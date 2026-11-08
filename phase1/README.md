@@ -27,7 +27,19 @@ For the official continuation task, each test prompt needs a **128-word continua
 | ---: | --- | --- | ---: |
 | 0.8314 | BERTScore F1 | 964722 | 17 / 17 |
 
-The [submission history](../results/codabench_submissions.md#phase-1-legal-language-model-pretraining) lists the scores and statuses for all 17 visible submissions. [JSON records](../results/codabench_submissions.json) are available too. The separate 32-example LegalEncDec local evaluation is described in [results/](../results/README.md).
+The [submission history](../results/codabench_submissions.md#phase-1-legal-language-model-pretraining) lists the scores and statuses for all 17 submissions shown in the screenshot. [JSON records](../results/codabench_submissions.json) are available too.
+
+### Scores I can tie to a model
+
+| Model | Recorded result | Where it comes from |
+| --- | --- | --- |
+| Conv/hybrid | Prefix validation loss 2.140168 at training step 9,500 | Saved checkpoint details reported on 24 October; this is not a BERTScore result |
+| LegalEncDec | Local BERTScore F1 0.812633 on 32 examples | Local evaluation screenshot from 24 October; also recorded in [results/](../results/README.md) |
+| FunnelTransformer | No model-specific score available | Code and configuration only |
+| RoPE–GQA–MoE backbone | No model-specific score available | Backbone loader and partial configuration only |
+| Fine-grained MoE variant | No model-specific score available | Separate training script; no checkpoint or evaluation supplied |
+
+Codabench submission **964722 scored 0.8314**, but its ZIP, checkpoint and run record have not been supplied. The Phase 1 submissions shown are dated **28 September–6 October**. The Conv checkpoint and LegalEncDec local evaluation described above were reported later in October, so I cannot use either to assign that earlier submission to a model.
 
 ## Remaining work
 
