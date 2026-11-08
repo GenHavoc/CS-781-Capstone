@@ -17,8 +17,8 @@ I ran the experiments in notebooks and submitted their outputs to Codabench. The
 | 990401 | 0.4036 | Conv/hybrid (reported 50M run) | Full fine-tuning |
 | 990257 | 0.4098 | FunnelTransformer + RoPE–GQA–MoE | Knowledge distillation |
 | 990035 | 0.4064 | RoPE–GQA–MoE (tentative) | rsLoRA (tentative) |
-| 985518 | 0.3554 | Decoder-only 50M or LegalEncDec 50M | LoRA |
-| 985411 | 0.3587 | Decoder-only 50M or LegalEncDec 50M | LoRA |
+| 985518 | 0.3554 | Decoder-only 50M | LoRA |
+| 985411 | 0.3587 | LegalEncDec 50M | LoRA |
 
 Model names follow the [Phase 1 model list](../phase1/README.md). The MoE implementation uses SwiGLU experts. The reported Conv run is marked 50M here; the Conv code currently in the repo is a 90M model, so that row is not linked to its checkpoint.
 

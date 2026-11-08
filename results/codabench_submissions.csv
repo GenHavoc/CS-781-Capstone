@@ -37,8 +37,8 @@ phase,submission_id,filename,date_displayed,status,score_displayed,check_mark_vi
 3,990401,submission.zip,2026-10-15 20:20,Finished,0.4036,False,Conv/hybrid,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,990257,submission.zip,2026-10-15 19:24,Finished,0.4098,False,FunnelTransformer + RoPE–GQA–MoE,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,990035,submission.zip,2026-10-15 17:55,Finished,0.4064,False,,,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,985518,submission.zip,2026-10-13 23:04,Finished,0.3554,False,,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,985411,submission.zip,2026-10-13 21:45,Finished,0.3587,False,,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,985518,submission.zip,2026-10-13 23:04,Finished,0.3554,False,Decoder-only 50M,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,985411,submission.zip,2026-10-13 21:45,Finished,0.3587,False,LegalEncDec 50M,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 4,1003872,submission.zip,2026-10-20 03:57,Finished,0.7110,False,,,,,,Screenshot 2026-11-08 at 12.27.58 AM.png
 4,1003780,submission.zip,2026-10-20 01:43,Finished,0.7061,False,,,,,,Screenshot 2026-11-08 at 12.27.58 AM.png
 4,1003747,submission.zip,2026-10-20 01:03,Finished,0.7295,False,,,,,,Screenshot 2026-11-08 at 12.27.58 AM.png
