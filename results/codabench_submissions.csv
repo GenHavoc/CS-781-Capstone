@@ -16,17 +16,17 @@ phase,submission_id,filename,date_displayed,status,score_displayed,check_mark_vi
 1,950394,submission.zip,2026-09-29 01:00,Finished,0.7950,False,Decoder-only 50M,,,,,Screenshot 2026-11-08 at 12.27.29 AM.png
 1,950207,submission.zip,2026-09-28 21:52,Finished,0.7577,False,,,,,,Screenshot 2026-11-08 at 12.27.29 AM.png
 1,948761,submission.zip,2026-09-28 04:08,Finished,0.7510,False,,,,,,Screenshot 2026-11-08 at 12.27.29 AM.png
-2,977930,submission.zip,2026-10-11 19:49,Finished,0.4908,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,975846,submission.zip,2026-10-11 04:55,Finished,0.5102,True,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,975795,submission.zip,2026-10-11 03:59,Finished,0.4779,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,973189,submission.zip,2026-10-10 03:10,Cancelled,0.4805,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,972951,submission.zip,2026-10-09 23:50,Finished,0.4861,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,972542,submission.zip,2026-10-09 20:39,Finished,0.3734,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,972385,submission.zip,2026-10-09 19:49,Finished,0.3493,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,970083,submission.zip,2026-10-09 01:11,Finished,0.3786,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,970073,submission.zip,2026-10-09 01:00,Finished,0.3774,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,967085,submission.zip,2026-10-07 19:18,Finished,0.3455,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-2,967063,submission.zip,2026-10-07 19:09,Finished,0.3481,False,,,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,977930,submission.zip,2026-10-11 19:49,Finished,0.4908,False,SwiGLU + FunnelTransformer,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,975846,submission.zip,2026-10-11 04:55,Finished,0.5102,True,SwiGLU,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,975795,submission.zip,2026-10-11 03:59,Finished,0.4779,False,SwiGLU,LoRA,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,973189,submission.zip,2026-10-10 03:10,Cancelled,0.4805,False,SwiGLU,LoRA,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,972951,submission.zip,2026-10-09 23:50,Finished,0.4861,False,SwiGLU,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,972542,submission.zip,2026-10-09 20:39,Finished,0.3734,False,FunnelTransformer,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,972385,submission.zip,2026-10-09 19:49,Finished,0.3493,False,FunnelTransformer,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,970083,submission.zip,2026-10-09 01:11,Finished,0.3786,False,LegalEncDec 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,970073,submission.zip,2026-10-09 01:00,Finished,0.3774,False,LegalEncDec 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,967085,submission.zip,2026-10-07 19:18,Finished,0.3455,False,Decoder-only 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
+2,967063,submission.zip,2026-10-07 19:09,Finished,0.3481,False,Decoder-only 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
 3,991557,sub.zip,2026-10-16 06:27,Finished,0.4211,False,,,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,991428,submission.zip,2026-10-16 05:22,Finished,0.4277,False,,,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,991425,sub.zip,2026-10-16 05:18,Finished,0.4277,True,,,,,,Screenshot 2026-11-08 at 12.27.47 AM.png

@@ -22,11 +22,11 @@ The history comes from seven Codabench My Submissions screenshots. It has not be
 - Submission 973189 is Cancelled but has a displayed score of 0.4805. Both are kept, and the row is excluded from the best-finished calculation.
 - Check marks are recorded as they appear. Leaderboard selection and final acceptance have not been checked separately.
 - Row statuses take priority over the repeated Running submission_8.zip banner: row 1040827 says Finished. The phase-availability banners are not used to establish the current schedule.
-- The author matched four Phase 1 scores to models: SwiGLU (964722), FunnelTransformer (964717), LegalEncDec 50M (950906) and decoder-only 50M (950394). Their exact code and checkpoints remain to be linked. Counts alone don't establish distinct predictions, architecture coverage, adaptation techniques or reproducibility.
+- The author matched four Phase 1 scores to models: SwiGLU (964722), FunnelTransformer (964717), LegalEncDec 50M (950906) and decoder-only 50M (950394). The author also confirmed the model and method for the eleven Phase 2 rows. Their exact code and checkpoints remain to be linked. Counts alone don't establish distinct predictions, architecture coverage, adaptation techniques or reproducibility.
 
 The original screenshots remain in the chat attachments. Their filenames and SHA-256 hashes below identify the source images; the images are not duplicated here.
 
-Machine-readable copies: [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv). The four author-attributed model mappings are filled in there; unknown mappings are JSON null / CSV empty cells. The 32-example local LegalEncDec evaluation is recorded separately.
+Machine-readable copies: [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv). The author-confirmed Phase 1 model labels and Phase 2 model/method labels are filled in there; unknown mappings are JSON null / CSV empty cells. The 32-example local LegalEncDec evaluation is recorded separately.
 
 ## Phase 1: Legal Language Model Pretraining
 
