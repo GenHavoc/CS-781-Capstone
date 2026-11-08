@@ -1,0 +1,157 @@
+Paste this section into the course template. The tables use booktabs and tabularx. Use the bibliography entries below in the template's bibliography file.
+
+\subsection{Sources and official splits}\label{sources-and-official-splits}
+
+The project used the Exploration-Lab CS-781 Capstone dataset and the
+course competition specification \cite{cs781_dataset, cs781_brief}.
+Phase 1 supplied Acts and documents from High Courts, the Supreme Court,
+and tribunals, together with test prompts. Phase 2 supplied two
+annotated legal named entity recognition (NER) folds and a separate test
+fold. Phase 3 provided separate training, development, and test splits
+for Corporate Law (CL) and Information Technology (IT).
+
+Phases 4 and 5 provided training, development, and test files for court
+judgment prediction and legal statute identification. Phase 6 provided
+judgment--summary pairs for training and judgments for testing.
+Validation judgments were held out from the training pool. Phase 7
+supplied separate query files and candidate pools for training,
+development, and test. Training and development queries included
+relevance labels \cite{cs781_brief}.
+
+\subsection{Corpus statistics}\label{corpus-statistics}
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Phase-wise dataset inventory. The Phase 1 token figure describes the available corpus. The number of tokens used in the pretraining runs is unavailable.}
+\label{tab:split-inventory}
+\begin{tabularx}{\linewidth}{@{}lXXXX@{}}
+\toprule
+\textbf{Phase} & \textbf{Task} & \textbf{Training data} & \textbf{Development / validation} & \textbf{Test data} \\
+\midrule
+1 & Legal language modelling & Four collections, over 4.5 billion tokens available & Run count unavailable & Prompt count unavailable \\
+2 & Legal NER & Folds 1 and 2, 12 entity types & No official development split & Fold 3 \\
+3 & Rhetorical role prediction & 16,845 sentences & 2,142 sentences & 2,197 sentences \\
+4 & Court judgment prediction & 37,387 raw rows, 31,652 unique texts & 3,505 raw rows, 994 clean cases & 1,517 cases \\
+5 & Legal statute identification & 42,750 documents & 10,181 documents & 13,019 documents \\
+6 & Abstractive summarization & 7,028 usable pairs before validation holdout & Held-out count unavailable & 100 documents \\
+7 & Prior case retrieval & Query and candidate counts unavailable & Query and candidate counts unavailable & Query and candidate counts unavailable \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Phase 2 entity inventory.} The 12 labels are APP, RESP,
+A.COUNSEL, R.COUNSEL, JUDGE, WIT, AUTH, COURT, STAT, PREC, DATE, and
+CASENO. Fold-level document counts, per-label span counts, and
+span-length statistics remain unverified. The training gold annotations
+provide the data needed to calculate these distributions
+\cite{cs781_brief}.
+
+\textbf{Phase 3 domain and role coverage.} The task used 13 rhetorical
+roles. Table~\ref{tab:rr-domains} gives the recorded
+document and sentence totals for both domains. Per-role counts within CL
+and IT remain unavailable in the run records.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Phase 3 document and sentence counts by split and domain.}
+\label{tab:rr-domains}
+\begin{tabularx}{\linewidth}{@{}Xrrrr@{}}
+\toprule
+\textbf{Split} & \textbf{CL docs} & \textbf{CL sents.} & \textbf{IT docs} & \textbf{IT sents.} \\
+\midrule
+Training & 40 & 10,593 & 40 & 6,252 \\
+Development & 5 & 1,396 & 5 & 746 \\
+Test & 5 & 1,339 & 5 & 858 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Phase 4 class balance.} The clean development set contained
+\textbf{497 class-0 cases and 497 class-1 cases} (50.0\% each). These
+counts come from the true-label row sums of the recorded confusion
+matrix, \(344+153\) and \(146+351\). The class counts for the training
+and private test sets remain unverified.
+
+\textbf{Phase 5 labels and lengths.} The training set contained 100
+statute labels and 158,398 label assignments. The median document had
+three labels. Individual labels occurred in 272 to 11,731 training
+documents.
+
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Share of Phase 5 documents exceeding each token-length threshold in the recorded audit.}
+\label{tab:lsi-lengths}
+\begin{tabularx}{\linewidth}{@{}Xrrr@{}}
+\toprule
+\textbf{Split} & \textbf{>512} & \textbf{>4,096} & \textbf{>8,192} \\
+\midrule
+Training & 55.3\% & 9.5\% & 2.3\% \\
+Development & 60.5\% & 10.8\% & 2.9\% \\
+Test & 60.4\% & 9.9\% & 2.5\% \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textbf{Phase 6 document and summary lengths.} The V6 preprocessing code
+measures source and reference-summary token lengths before input
+selection and target truncation. The completed \texttt{data\_stats.json}
+is needed for the actual length distributions, truncation rates, and
+holdout size. The 2,048-token context and 768-token target budget are
+model settings.
+
+\textbf{Phase 7 retrieval pools.} The preparation code records the
+number of queries and candidates per split and the distribution of known
+relevant cases per query. The completed \texttt{data\_audit.json} is
+needed for those measured values.
+
+\subsection{Preprocessing}\label{preprocessing}
+
+\textbf{Phase 1.} The recorded RoPE and Conv configurations used the
+matching custom-trained legal BPE tokenizer,
+\texttt{legal\_bpe\_50k\_fixed.json}. The tokenizer audit recorded
+\textbf{50,000 vocabulary entries}. The byte-level configuration and the
+number of training tokens processed by each model remain unverified.
+
+\textbf{Phase 2.} The data pairs each document ID with its original text
+and labelled entity spans. The official prediction format uses
+document-level start and end character offsets and an entity label.
+Evaluation requires exact agreement on both endpoints and the label. The
+implementation used for token-to-character alignment, span decoding, and
+entities crossing input windows remains unverified \cite{cs781_brief}.
+
+\textbf{Phase 3.} Each labelled sentence was a classification target.
+The context-aware V2 workflow used surrounding sentences and
+sentence-position information and preserved the order of predictions
+within each document.
+
+\textbf{Phase 4.} The V3.1 run used 28,487 unique texts for fitting and
+3,165 for internal validation after auditing repeated records. Long
+judgments were represented with up to six 512-token chunks, with
+selection weighted toward the end of the document. The model combined
+the chunk representations to produce a single judgment prediction.
+
+\textbf{Phase 5.} The reviewed pipeline tokenized complete documents
+before chunk selection and represented statute targets as multi-hot
+vectors. For overlength training documents, it partitioned the available
+chunks into evenly spaced groups and sampled one chunk from each.
+Development and test used evenly spaced chunks that included the
+beginning and end.
+
+\textbf{Phase 6.} The V6 notebook removed empty reference summaries and
+kept duplicate judgments in the same split when creating the holdout. It
+reserved up to 768 tokens for the summary within a 2,048-token context.
+It used the remaining space for the judgment and prompt markers. The
+notebook fitted its passage selector with training references and
+prepared a head-and-tail input as an alternative.
+
+\textbf{Phase 7.} The FullFT Pro notebook joined case sentences in
+order, preserved IDs as strings, and tokenized queries and candidates
+separately. The default represented overlength cases with up to three
+384-token chunks spaced across the document. It pooled token
+representations into document and local segment vectors. Each training
+query could be paired with up to two relevant cases, three hard
+negatives from lexical rankings, and one random negative. Retrieval
+ranked candidates from the query's own split.
