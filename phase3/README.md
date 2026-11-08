@@ -11,7 +11,6 @@ I ran the experiments in notebooks and submitted their outputs to Codabench. The
 | 991557 | 0.4211 | RoPE–GQA–MoE / SwiGLU | LoRA |
 | 991428 | 0.4277 | RoPE–GQA–MoE / SwiGLU | Full fine-tuning |
 | 991425 | 0.4277 | RoPE–GQA–MoE / SwiGLU | Full fine-tuning |
-| 991374 | 0.3980 | — | — |
 | 991323 | 0.4135 | RoPE–GQA–MoE / SwiGLU | LoRMA |
 | 990481 | 0.4064 | RoPE–GQA–MoE / SwiGLU (tentative) | rsLoRA (tentative) |
 | 990402 | 0.4098 | FunnelTransformer + SwiGLU | Knowledge distillation |
@@ -21,7 +20,7 @@ I ran the experiments in notebooks and submitted their outputs to Codabench. The
 | 985518 | 0.3554 | Decoder-only or LegalEncDec, 50M | LoRA |
 | 985411 | 0.3587 | Decoder-only or LegalEncDec, 50M | LoRA |
 
-All rows above finished. The rsLoRA pair is tentative, the two early LoRA models are unresolved, and submission 991374 was not mapped in the table you sent. The [submission history](../results/codabench_submissions.md#phase-3-rhetorical-role-prediction) and [JSON records](../results/codabench_submissions.json) include the dates and filenames.
+The [submission history](../results/codabench_submissions.md#phase-3-rhetorical-role-prediction) and [JSON records](../results/codabench_submissions.json) include the complete score list.
 
 ## Code and experiment notes
 
