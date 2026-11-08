@@ -27,15 +27,15 @@ phase,submission_id,filename,date_displayed,status,score_displayed,check_mark_vi
 2,970073,submission.zip,2026-10-09 01:00,Finished,0.3774,False,LegalEncDec 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
 2,967085,submission.zip,2026-10-07 19:18,Finished,0.3455,False,Decoder-only 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
 2,967063,submission.zip,2026-10-07 19:09,Finished,0.3481,False,Decoder-only 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.38 AM.png
-3,991557,sub.zip,2026-10-16 06:27,Finished,0.4211,False,RoPE–GQA–MoE / SwiGLU,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,991428,submission.zip,2026-10-16 05:22,Finished,0.4277,False,RoPE–GQA–MoE / SwiGLU,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,991425,sub.zip,2026-10-16 05:18,Finished,0.4277,True,RoPE–GQA–MoE / SwiGLU,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,991557,sub.zip,2026-10-16 06:27,Finished,0.4211,False,RoPE–GQA–MoE,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,991428,submission.zip,2026-10-16 05:22,Finished,0.4277,False,RoPE–GQA–MoE,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,991425,sub.zip,2026-10-16 05:18,Finished,0.4277,True,RoPE–GQA–MoE,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,991374,submission.zip,2026-10-16 03:50,Finished,0.3980,False,,,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,991323,submission.zip,2026-10-16 03:13,Finished,0.4135,False,RoPE–GQA–MoE / SwiGLU,LoRMA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,991323,submission.zip,2026-10-16 03:13,Finished,0.4135,False,RoPE–GQA–MoE,LoRMA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,990481,submission.zip,2026-10-15 21:09,Finished,0.4064,False,,,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,990402,submission.zip,2026-10-15 20:20,Finished,0.4098,False,FunnelTransformer + SwiGLU,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,990401,submission.zip,2026-10-15 20:20,Finished,0.4036,False,Conv, 50M,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
-3,990257,submission.zip,2026-10-15 19:24,Finished,0.4098,False,FunnelTransformer + SwiGLU,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,990402,submission.zip,2026-10-15 20:20,Finished,0.4098,False,FunnelTransformer + RoPE–GQA–MoE,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,990401,submission.zip,2026-10-15 20:20,Finished,0.4036,False,Conv/hybrid,Full fine-tuning,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
+3,990257,submission.zip,2026-10-15 19:24,Finished,0.4098,False,FunnelTransformer + RoPE–GQA–MoE,Knowledge distillation,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,990035,submission.zip,2026-10-15 17:55,Finished,0.4064,False,,,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,985518,submission.zip,2026-10-13 23:04,Finished,0.3554,False,,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
 3,985411,submission.zip,2026-10-13 21:45,Finished,0.3587,False,,LoRA,,,,Screenshot 2026-11-08 at 12.27.47 AM.png
