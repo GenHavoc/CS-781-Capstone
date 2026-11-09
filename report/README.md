@@ -19,3 +19,7 @@ The [requirements checklist](../docs/requirements.md) covers the deliverables an
 ## Competition results inventory
 
 The [results table](../results/README.md) records the seven scores and ranks. Finished submissions visible by phase are 14, 10, 12, 8, 8, 6 and 7, for 65 documented finished uploads. Early testing runs are included when they finished. Three Phase 7 rows are missing from the screenshot, so its final count and the total valid-submission number still need checking before the report table is finalized.
+
+## Notebook experiment records
+
+The [Phase 3–7 notebook run records](../experiments/notebook_run_records.md) contain transcribed local validation scores and saved run settings. They do not establish the exact Codabench submission ID for each run; resolve those joins from the corresponding checkpoint, ZIP, or job log before using them as submission-level comparisons in the report.
