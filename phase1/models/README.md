@@ -46,3 +46,7 @@ python phase1/models/funnel.py generate --ckpt checkpoints/funnel_50m.pt --token
 This command prints the prompt and continuation together. `--max_new_tokens` is a token limit; official Phase 1 submissions need a 128-word continuation excluding the prompt. The standalone generator does not package an official submission ZIP.
 
 The four model files have been syntax-checked. They have not been trained or evaluated on a GPU as part of this upload.
+
+## Funnel configuration above 50M
+
+[`funnel_50m.py`](funnel_50m.py) sets the FFN width to 2,560, giving 50,570,240 parameters by calculation. It is a new configuration that requires fresh training and uses a separate `funnel_5057m.pt` checkpoint. The original 45.3M model and its results remain associated with the original configuration.
