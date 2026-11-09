@@ -2,17 +2,19 @@
 
 ## Codabench
 
-| Phase | Task | Metric | Best visible finished score | Rank | Submission ID(s) |
-| --- | --- | --- | ---: | ---: | --- |
-| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 70 | 964722 |
-| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 77 | 975846 |
-| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 111 | 991428, 991425 |
-| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 64 | 1003593 |
-| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 16 | 1010677 |
-| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 43 | 1028539 |
-| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 48 | 1040827 |
+| Phase | Task | Metric | Best visible finished score | Rank | Finished shown | Submission ID(s) |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 70 | 14 | 964722 |
+| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 77 | 10 | 975846 |
+| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 111 | 12 | 991428, 991425 |
+| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 64 | 8 | 1003593 |
+| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 16 | 8 | 1010677 |
+| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 43 | 6 | 1028539 |
+| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 48 | 7 | 1040827 |
 
 Ranks supplied on 9 November 2026. These are leaderboard ranks; the score column lists the best visible finished submissions.
+
+Finished shown counts scored uploads, including exploratory runs: **14, 10, 12, 8, 8, 6, 7** by phase (**65** documented finished submissions). Failed and cancelled uploads are excluded. The Phase 7 counter shows ten total uploads, but three rows are absent from the supplied screenshot, so its final finished count and the overall total remain open. Identical prediction dumps would not be distinct submissions.
 
 The [submission history](codabench_submissions.md), [JSON](codabench_submissions.json) and [CSV](codabench_submissions.csv) contain 71 visible rows: 65 Finished, two Failed and four Cancelled. The phase counters sum to 74; the remaining three Phase 7 rows are outside the screenshot.
 

@@ -8,17 +8,17 @@ The Phase 1 work covers four model designs: a convolution–Transformer hybrid, 
 
 These are the best scores from the submitted notebook runs. For Phase 4, the selected submission is shown.
 
-| Phase | Task | Metric | Best visible finished score | Rank | Submission ID(s) |
-| --- | --- | --- | ---: | ---: | --- |
-| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 70 | 964722 |
-| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 77 | 975846 |
-| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 111 | 991428, 991425 |
-| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 64 | 1003593 |
-| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 16 | 1010677 |
-| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 43 | 1028539 |
-| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 48 | 1040827 |
+| Phase | Task | Metric | Best visible finished score | Rank | Finished shown | Submission ID(s) |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| 1 | Legal Language Model Pretraining | BERTScore F1 | 0.8314 | 70 | 14 | 964722 |
+| 2 | Legal Named Entity Recognition | Strict Macro-F1 | 0.5102 | 77 | 10 | 975846 |
+| 3 | Rhetorical Role Prediction | Macro-F1 | 0.4277 | 111 | 12 | 991428, 991425 |
+| 4 | Court Judgment Prediction | Macro-F1 | 0.7295 | 64 | 8 | 1003593 |
+| 5 | Legal Statute Identification | Macro-F1 | 0.4334 | 16 | 8 | 1010677 |
+| 6 | Abstractive Summarization | BERTScore F1 | 0.8448 | 43 | 6 | 1028539 |
+| 7 | Prior Case Retrieval | Micro-F1@7 | 0.4324 | 48 | 7 | 1040827 |
 
-Ranks supplied on 9 November 2026. These are leaderboard ranks; the score column lists the best visible finished submissions.
+Ranks supplied on 9 November 2026. The score column lists the best visible finished submissions. Finished shown includes early test runs that completed successfully; Phase 7 has three additional rows outside the supplied screenshot.
 
 The [Phase 1 model scores](phase1/README.md#model-scores) include the Conv result you reported as 0.838, SwiGLU at 0.8314 (submission 964722), and the Funnel, encoder–decoder and 50M decoder results. The Conv 0.838 result has no matching row in the supplied screenshot, so the Phase 1 value above remains the best screenshot result.
 

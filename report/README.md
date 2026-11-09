@@ -15,3 +15,7 @@ The [requirements checklist](../docs/requirements.md) covers the deliverables an
 ## Data analysis draft
 
 [Data analysis and preprocessing](data_analysis_preprocessing.tex) contains the section supplied for the report, with LaTeX heading and reference fixes. Place it under the existing section heading in the template. Add the citations from [references.bib](references.bib) to the final bibliography. Values described as unavailable or unverified still need the matching run audit.
+
+## Competition results inventory
+
+The [results table](../results/README.md) records the seven scores and ranks. Finished submissions visible by phase are 14, 10, 12, 8, 8, 6 and 7, for 65 documented finished uploads. Early testing runs are included when they finished. Three Phase 7 rows are missing from the screenshot, so its final count and the total valid-submission number still need checking before the report table is finalized.
