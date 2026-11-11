@@ -6,20 +6,7 @@ This project explores how far compact, self-hosted language models can go on Ind
 
 ## From pretraining to six legal tasks
 
-The diagram shows the backbone associated with the highest downstream submission that the report could trace to a training run. The phase guides also record experiments with other backbones, adapters, LoRA, LoRMA, prefix tuning and distillation.
-
-```mermaid
-flowchart TD
-    corpus["Acts, High Courts, Supreme Court and tribunals"] --> bpe["50,000-token byte-level BPE"]
-    bpe --> rope["RoPE–GQA–MoE"]
-    bpe --> conv["Conv/hybrid"]
-    rope --> spans["P2 · Character spans"]
-    rope --> roles["P3 · Sentence roles"]
-    rope --> outcome["P4 · Judgment outcome"]
-    conv --> statutes["P5 · Statute IDs"]
-    conv --> summary["P6 · Judgment summary"]
-    conv --> cases["P7 · Seven prior cases"]
-```
+Among the downstream submissions matched to training runs, RoPE–GQA–MoE scored highest in phases 2–4 and Conv/hybrid in phases 5–7. The phase guides also cover LoRA, LoRMA, adapters, prefix tuning and distillation.
 
 ## Results
 
@@ -52,6 +39,30 @@ The [architecture notes](docs/architectures.md) cover the attention layouts, lay
 
 All four model files are in [phase1/models/](phase1/models/README.md): [Conv](phase1/models/conv_hybrid.py), [Funnel](phase1/models/funnel.py), [LegalEncDec](phase1/models/legal_enc_dec.py) and [MoE backbone](phase1/models/rope_gqa_moe_backbone.py). Conv and LegalEncDec have training notebooks; Funnel includes a standalone trainer and generator. An additional [fine-grained MoE training script](phase1/models/model_g_legal_lm_2048.py) is included as a separate 2,048-context variant. It does not identify the architecture used for the earlier MoE checkpoint. The phase guides below link the available implementations and experiment records. Loading trained models requires the corresponding checkpoint.
 
+### Conv/hybrid architecture
+
+The 90,061,440-parameter prefix language model runs attention and convolution in parallel inside each block. Prefix tokens can attend to one another, and continuation tokens can attend to the prefix and earlier continuation tokens. The convolution reads the current position and the four immediately preceding positions. [Model implementation](phase1/models/conv_hybrid.py)
+
+```mermaid
+flowchart TD
+    T["Legal BPE tokens · up to 2,048"] --> E["Token embeddings · width 640"]
+    subgraph B["Hybrid block × 12"]
+        X["Block input"] --> N["RMSNorm"]
+        N --> A["10-head self-attention · RoPE on Q and K"]
+        N --> C["Causal depthwise convolution · kernel 5"]
+        C --> G["SiLU × learned per-channel sigmoid gate"]
+        X --> M["Residual sum"]
+        A --> M
+        G --> M
+        M --> F["RMSNorm → SwiGLU FFN · inner width 1,664"]
+        M --> Y["Residual sum"]
+        F --> Y
+    end
+    E --> X
+    Y --> H["Final RMSNorm after block 12"]
+    H --> L["Tied embedding projection · 50,000 next-token logits"]
+```
+
 ## How the downstream tasks use a judgment
 
 | Phase | Unit of prediction | Reference workflow |
@@ -65,18 +76,8 @@ All four model files are in [phase1/models/](phase1/models/README.md): [Conv](ph
 
 ### How statute scores become predictions
 
-More than half of the documents in each Phase 5 split exceeded 512 tokens. A judgment can cite several statutes, so the classifier scores each label independently. This diagram follows the Conv/hybrid reference implementation.
+More than half of the documents in each Phase 5 split exceeded 512 tokens. A judgment can cite several statutes, so the classifier scores each label independently. The Conv/hybrid reference implementation averages neural and TF–IDF scores before applying the decision thresholds.
 
-```mermaid
-flowchart TD
-    doc["Judgment text"] --> chunks["Select up to twelve 512-token chunks"]
-    chunks --> neural["Conv/hybrid pooling and 100 sigmoid scores"]
-    doc --> sparse["TF–IDF classifier scores"]
-    neural --> blend["Average the two scores per statute"]
-    sparse --> blend
-    blend --> threshold["Apply global or per-label thresholds"]
-    threshold --> ids["Return unique statute IDs"]
-```
 
 ### Data and evaluation splits
 
